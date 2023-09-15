@@ -1,7 +1,9 @@
 package com.chunjies.office.controller.portal;
 
 import com.chunjies.office.common.base.IController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import com.chunjies.office.common.utils.Result;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -10,8 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
  * {@code @description}
  */
 @RestController
-@RequestMapping("/portal")
 public class IndexController extends IController {
 
+
+    @GetMapping("/")
+    public ResponseEntity index() {
+
+        return ResponseEntity.ok(new Result());
+    }
 
 }

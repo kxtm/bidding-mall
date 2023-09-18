@@ -1,5 +1,6 @@
 package com.chunjies.office.plugins.spi;
 
+import com.chunjies.office.common.enums.MarketType;
 import org.springframework.plugin.core.Plugin;
 
 /**
@@ -7,6 +8,6 @@ import org.springframework.plugin.core.Plugin;
  * {@code @time} 2023/9/18
  * {@code @description}
  */
-public interface MarketPlugin extends Plugin<String> {
-    String getToken(String msg);
+public interface IMarketPlugin extends Plugin<MarketType> {
+    String getToken();
 }

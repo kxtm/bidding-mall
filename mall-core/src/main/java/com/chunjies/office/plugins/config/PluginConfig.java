@@ -2,7 +2,7 @@ package com.chunjies.office.plugins.config;
 
 import com.chunjies.office.plugins.impl.JdMarketPlugin;
 import com.chunjies.office.plugins.impl.QxMarketPlugin;
-import com.chunjies.office.plugins.spi.MarketPlugin;
+import com.chunjies.office.plugins.spi.IMarketPlugin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.plugin.core.config.EnablePluginRegistries;
@@ -13,7 +13,7 @@ import org.springframework.plugin.core.config.EnablePluginRegistries;
  * {@code @description}
  */
 @Configuration
-@EnablePluginRegistries(MarketPlugin.class)
+@EnablePluginRegistries(IMarketPlugin.class)
 public class PluginConfig {
 
     @Bean

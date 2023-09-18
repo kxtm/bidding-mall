@@ -1,8 +1,9 @@
 package com.chunjies.office.controller.portal;
 
 import com.chunjies.office.common.base.IController;
+import com.chunjies.office.common.enums.MarketType;
 import com.chunjies.office.common.utils.Result;
-import com.chunjies.office.plugins.spi.MarketPlugin;
+import com.chunjies.office.plugins.spi.IMarketPlugin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.plugin.core.PluginRegistry;
@@ -20,20 +21,18 @@ import java.util.List;
 public class IndexController extends IController {
 
 
-   private PluginRegistry<MarketPlugin, String> registry;
+    private PluginRegistry<IMarketPlugin, MarketType> registry;
+
     @GetMapping("/")
     public ResponseEntity index() {
-        List<MarketPlugin> plugins = registry.getPlugins();
-        for (MarketPlugin plugin : plugins) {
-            plugin.getToken("1391xxxxxxxx");
-            plugin.getToken("1381xxxxxxxx");
-        }
+        IMarketPlugin plugin= registry.getPluginFor(MarketType.JD).get();
+        plugin.getToken();
         return ResponseEntity.ok(new Result());
     }
 
 
     @Autowired
-    public void setRegistry(PluginRegistry<MarketPlugin, String> registry) {
+    public void setRegistry(PluginRegistry<IMarketPlugin, MarketType> registry) {
         this.registry = registry;
     }
 }

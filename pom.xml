@@ -14,7 +14,7 @@
     <name>office-mall-system</name>
     <modules>
         <module>mall-core</module>
-        <module>mall-app</module>
+        <module>mall-epp</module>
     </modules>
     <packaging>pom</packaging>
     <description>office-mall-system</description>
@@ -28,6 +28,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.plugin</groupId>
+            <artifactId>spring-plugin-core</artifactId>
+            <version>2.0.0.RELEASE</version>
         </dependency>
     </dependencies>
 

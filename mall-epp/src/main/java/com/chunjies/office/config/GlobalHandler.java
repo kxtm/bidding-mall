@@ -1,5 +1,6 @@
 package com.chunjies.office.config;
 
+import com.chunjies.office.common.utils.Result;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GlobalHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleException(Exception e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+    public Result handleException(Exception e) {
+        return Result.error(e.getMessage());
     }
 }

@@ -1,6 +1,7 @@
-package com.chunjies.office.controller.system;
+package com.chunjies.office.controller;
 
-import com.chunjies.office.common.base.IController;
+import com.chunjies.office.core.base.IController;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,5 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
+@Api("用户模块")
 public class UserController extends IController {
 }

@@ -1,4 +1,4 @@
-package com.chunjies.office.common.enums;
+package com.chunjies.office.core.enums;
 
 /**
  * {@code @author} chunjie
@@ -6,7 +6,7 @@ package com.chunjies.office.common.enums;
  * {@code @description}
  */
 public enum MarketType {
-    JD("JD", "京东"), QX("QX", "齐心"), LXWL("LXWL", "领先未来"), DL("DL", "得力"), MG("MG", "晨光");
+    JD("JD", "京东"), QX("QX", "齐心"), LXWL("LXWL", "领先未来"), DL("DL", "得力"), MG("MG", "晨光"),SYS("SYS","系统自带");
 
     MarketType(String type, String desc) {
         this.type = type;

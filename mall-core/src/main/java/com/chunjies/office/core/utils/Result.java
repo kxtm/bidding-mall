@@ -1,4 +1,4 @@
-package com.chunjies.office.common.utils;
+package com.chunjies.office.core.utils;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -29,12 +29,16 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
+
+    public static <T> Result ok() {
+        return new Result(DEFAULT_SUCCESS_CODE, DEFAULT_OK_MSG, DEFAULT_DATA);
+    }
+
     /**
      * 成功返回信息
      *
      * @param msg  消息
      * @param data 数据
-     * @param <T>
      * @return
      */
     public static <T> Result ok(String msg, T data) {
@@ -61,34 +65,35 @@ public class Result<T> implements Serializable {
         return new Result(code, msg, data);
     }
 
+    public static <T> Result error() {
+        return new Result(DEFAULT_ERROR_CODE, DEFAULT_ERROR_MSG, DEFAULT_DATA);
+    }
+
     /**
-     *
      * @param msg
      * @param data
-     * @return
      * @param <T>
+     * @return
      */
     public static <T> Result error(String msg, T data) {
         return new Result(DEFAULT_ERROR_CODE, msg, data);
     }
 
     /**
-     *
      * @param msg
-     * @return
      * @param <T>
+     * @return
      */
     public static <T> Result error(String msg) {
         return new Result(DEFAULT_ERROR_CODE, msg, DEFAULT_DATA);
     }
 
     /**
-     *
      * @param code
      * @param msg
      * @param data
-     * @return
      * @param <T>
+     * @return
      */
     public static <T> Result error(int code, String msg, T data) {
         return new Result(code, msg, data);
@@ -138,6 +143,7 @@ public class Result<T> implements Serializable {
     final static int DEFAULT_SUCCESS_CODE = 1;
     final static int DEFAULT_ERROR_CODE = 0;
     final static String DEFAULT_DATA = "";
-
+    final static String DEFAULT_OK_MSG = "请求成功";
+    final static String DEFAULT_ERROR_MSG = "无效请求";
 
 }

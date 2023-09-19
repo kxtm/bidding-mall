@@ -1,4 +1,4 @@
-package com.chunjies.office.common.consts;
+package com.chunjies.office.core.consts;
 
 /**
  * {@code @author} chunjie

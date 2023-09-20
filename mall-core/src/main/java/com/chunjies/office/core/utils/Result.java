@@ -1,5 +1,8 @@
 package com.chunjies.office.core.utils;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
@@ -9,15 +12,18 @@ import java.util.UUID;
  * {@code @author:} chunjie
  * {@code @date: }2023-09-15 22:26
  **/
+@ApiModel(description = "结果返回模型")
 public class Result<T> implements Serializable {
+
+    @ApiModelProperty("链路ID")
     private String traceId;
-
+    @ApiModelProperty(value = "错误码 1 成功,0失败")
     private int code;
-
+    @ApiModelProperty(value = "错误信息")
     private String msg;
-
+    @ApiModelProperty(value = "返回数据")
     private T data;
-
+    @ApiModelProperty("请求时间")
     private Date timeStamp;
 
     public Result() {

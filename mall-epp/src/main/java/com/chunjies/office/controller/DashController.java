@@ -3,6 +3,7 @@ package com.chunjies.office.controller;
 import com.chunjies.office.core.base.IController;
 import com.chunjies.office.core.utils.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,11 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 
 @RestController
-@Api("仪表盘模块")
+@Api(tags = "仪表盘模块")
 @RequestMapping("/api/dash")
 public class DashController extends IController {
 
-    @GetMapping("/userDash")
+    @GetMapping("/user")
+    @ApiOperation("用户仪表盘")
     public Result userBoard() {
 
         return Result.error();

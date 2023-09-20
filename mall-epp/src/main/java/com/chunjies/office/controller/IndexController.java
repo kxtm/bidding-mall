@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
  * {@code @description}
  */
 @RestController
-@RequestMapping("/api")
 @Api(tags = "商城首页")
+@RequestMapping("/api")
 public class IndexController extends IController {
 
 

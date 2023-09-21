@@ -23,7 +23,11 @@
         <artifactId>mall-core</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </dependency>
-
+    <dependency>
+        <groupId>com.chunjies.office</groupId>
+        <artifactId>mall-cache</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </dependency>
 </dependencies>
 
     <build>

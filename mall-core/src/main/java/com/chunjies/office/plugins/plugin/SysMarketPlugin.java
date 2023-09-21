@@ -18,13 +18,103 @@ public class SysMarketPlugin extends IMarketPlugin {
     @Override
     protected String getToken() {
         log.error("公共获取Token请求-》{}",getMarketParam().getType());
-        return super.getToken();
+        return "";
+    }
+
+    @Override
+    public Result getCategoryList() {
+        return Result.error();
+    }
+
+    @Override
+    public Result getSkuList(String CategoryId) {
+        return null;
+    }
+
+    @Override
+    public Result getSKuDetail(String skuId) {
+        return null;
+    }
+
+    @Override
+    public Result getSkuImgList(String skuId) {
+        return null;
+    }
+
+    @Override
+    public Result getSkuPrice(String skuId) {
+        return null;
+    }
+
+    @Override
+    public Result getSkuStock(String skuId) {
+        return null;
+    }
+
+    @Override
+    public Result querySkuState(String skuId) {
+        return null;
     }
 
     @Override
     public Result<OrderResponse> createOrder(OrderRequest orderRequest) {
         getToken();
-        return super.createOrder(orderRequest);
+        return Result.error();
+    }
+
+    @Override
+    public Result confirmOrder(String thirdOrderNo) {
+        return null;
+    }
+
+    @Override
+    public Result cancelOrder(String thirdOrderNo) {
+        return null;
+    }
+
+    @Override
+    public Result getOrderSplit(String thirdOrderNo) {
+        return null;
+    }
+
+    @Override
+    public Result confirmReceived(String thirdOrderNo) {
+        return null;
+    }
+
+    @Override
+    public Result getOrderLogistics(String thirdOrderNo) {
+        return null;
+    }
+
+    @Override
+    public Result returnOrder() {
+        return null;
+    }
+
+    @Override
+    public Result checkBill() {
+        return null;
+    }
+
+    @Override
+    public Result applayInvoice() {
+        return null;
+    }
+
+    @Override
+    public Result getInvoiceDetail() {
+        return null;
+    }
+
+    @Override
+    public Result getMsg(String type) {
+        return null;
+    }
+
+    @Override
+    public Result delMsg(String... msgId) {
+        return null;
     }
 
     @Override

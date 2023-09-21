@@ -21,9 +21,99 @@ public class JdMarketPlugin extends IMarketPlugin {
     }
 
     @Override
+    public Result getCategoryList() {
+        return Result.error();
+    }
+
+    @Override
+    public Result getSkuList(String CategoryId) {
+        return Result.error();
+    }
+
+    @Override
+    public Result getSKuDetail(String skuId) {
+        return Result.error();
+    }
+
+    @Override
+    public Result getSkuImgList(String skuId) {
+        return Result.error();
+    }
+
+    @Override
+    public Result getSkuPrice(String skuId) {
+        return Result.error();
+    }
+
+    @Override
+    public Result getSkuStock(String skuId) {
+        return Result.error();
+    }
+
+    @Override
+    public Result querySkuState(String skuId) {
+        return Result.error();
+    }
+
+    @Override
     public Result<OrderResponse> createOrder(OrderRequest orderRequest) {
         getToken();
-        return super.createOrder(orderRequest);
+        return Result.error();
+    }
+
+    @Override
+    public Result confirmOrder(String thirdOrderNo) {
+        return Result.error();
+    }
+
+    @Override
+    public Result cancelOrder(String thirdOrderNo) {
+        return Result.error();
+    }
+
+    @Override
+    public Result getOrderSplit(String thirdOrderNo) {
+        return Result.error();
+    }
+
+    @Override
+    public Result confirmReceived(String thirdOrderNo) {
+        return Result.error();
+    }
+
+    @Override
+    public Result getOrderLogistics(String thirdOrderNo) {
+        return Result.error();
+    }
+
+    @Override
+    public Result returnOrder() {
+        return Result.error();
+    }
+
+    @Override
+    public Result checkBill() {
+        return Result.error();
+    }
+
+    @Override
+    public Result applayInvoice() {
+        return Result.error();
+    }
+
+    @Override
+    public Result getInvoiceDetail() {
+        return Result.error();
+    }
+
+    @Override
+    public Result getMsg(String type) {
+        return Result.error();
+    }
+
+    @Override
+    public Result delMsg(String... msgId) {
+        return Result.error();
     }
 
     @Override

@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(tags = "商城首页")
 @RequestMapping("/api")
 public class IndexController extends IController {
-
-
     private IOrderFace orderFace;
 
     @GetMapping("/")
@@ -33,4 +31,5 @@ public class IndexController extends IController {
     public void setOrderFace(IOrderFace orderFace) {
         this.orderFace = orderFace;
     }
+
 }

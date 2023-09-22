@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  * {@code @description}
  */
 @Component
+@SuppressWarnings(value = { "unchecked", "rawtypes" })
 public class QxMarketPlugin extends IMarketPlugin {
     protected String getToken() {
         System.out.println("齐心接口");

@@ -15,6 +15,7 @@ import org.springframework.util.Assert;
  * {@code @description} 系统公共接口仅供外部对接使用
  */
 @Component
+@SuppressWarnings(value = { "unchecked", "rawtypes" })
 public class SysMarketPlugin extends IMarketPlugin {
     @Override
     protected String getToken() {

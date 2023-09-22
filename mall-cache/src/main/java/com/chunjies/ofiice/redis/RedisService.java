@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  * {@code @description}
  */
 @Component("redisService")
+@SuppressWarnings(value = { "unchecked", "rawtypes" })
 public class RedisService {
 
     final Logger log = LoggerFactory.getLogger(getClass());

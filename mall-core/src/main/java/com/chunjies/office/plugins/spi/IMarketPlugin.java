@@ -16,6 +16,7 @@ import javax.annotation.Resource;
  * {@code @time} 2023/9/18
  * {@code @description}
  */
+
 public abstract class IMarketPlugin implements Plugin<MarketParam> {
     protected RedisService redisService;
     protected Logger log = LoggerFactory.getLogger(getClass());

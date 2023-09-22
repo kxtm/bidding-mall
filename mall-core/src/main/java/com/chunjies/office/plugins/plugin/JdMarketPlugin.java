@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  * {@code @description}
  */
 @Component
+@SuppressWarnings(value = { "unchecked", "rawtypes" })
 public class JdMarketPlugin extends IMarketPlugin {
     protected String getToken() {
         this.log.error("京东->{}", this.getMarketParam().getType());

@@ -13,6 +13,7 @@ import java.util.UUID;
  * {@code @date: }2023-09-15 22:26
  **/
 @ApiModel(description = "结果返回模型")
+@SuppressWarnings(value = { "unchecked", "rawtypes" })
 public class Result<T> implements Serializable {
 
     @ApiModelProperty("链路ID")

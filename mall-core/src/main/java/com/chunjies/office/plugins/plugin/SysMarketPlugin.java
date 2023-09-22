@@ -7,6 +7,7 @@ import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 /**
  * {@code @author} chunjie
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 public class SysMarketPlugin extends IMarketPlugin {
     @Override
     protected String getToken() {
+        Assert.notNull(this.redisService,"不能为空");
         log.error("公共获取Token请求-》{}",getMarketParam().getType());
         return "";
     }

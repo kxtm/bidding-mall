@@ -9,18 +9,20 @@ import com.chunjies.office.plugins.spi.IMarketPlugin;
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
 
+import javax.annotation.Nonnull;
+
 /**
  * {@code @author} chunjie
  * {@code @time} 2023/9/19
  * {@code @description} 系统公共接口仅供外部对接使用
  */
 @Component
-@SuppressWarnings(value = { "unchecked", "rawtypes" })
+@SuppressWarnings(value = {"unchecked", "rawtypes"})
 public class SysMarketPlugin extends IMarketPlugin {
     @Override
     protected String getToken() {
-        Assert.notNull(this.redisService,"不能为空");
-        log.error("公共获取Token请求-》{}",getMarketParam().getType());
+        Assert.notNull(this.redisService, "不能为空");
+        log.error("公共获取Token请求-》{}", getParam().getType());
         return "";
     }
 
@@ -121,8 +123,8 @@ public class SysMarketPlugin extends IMarketPlugin {
     }
 
     @Override
-    public boolean supports(MarketParam marketParam) {
-        this.setMarketParam(marketParam);
+    public boolean supports(@Nonnull MarketParam marketParam) {
+        this.param = marketParam;
         return marketParam.getType().equals(MarketType.SYS.getType());
     }
 }

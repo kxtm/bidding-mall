@@ -8,16 +8,18 @@ import com.chunjies.office.plugins.model.OrderResponse;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Nonnull;
+
 /**
  * {@code @author} chunjie
  * {@code @time} 2023/9/18
  * {@code @description}
  */
 @Component
-@SuppressWarnings(value = { "unchecked", "rawtypes" })
+@SuppressWarnings(value = {"unchecked", "rawtypes"})
 public class JdMarketPlugin extends IMarketPlugin {
     protected String getToken() {
-        this.log.error("京东->{}", this.getMarketParam().getType());
+        this.log.error("京东->{}", this.getParam().getType());
         return null;
     }
 
@@ -118,8 +120,8 @@ public class JdMarketPlugin extends IMarketPlugin {
     }
 
     @Override
-    public boolean supports(MarketParam marketParam) {
-        this.setMarketParam(marketParam);
+    public boolean supports(@Nonnull MarketParam marketParam) {
+        this.param = marketParam;
         return marketParam.getType().equals(MarketType.JD.getType());
     }
 

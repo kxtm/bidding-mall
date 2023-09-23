@@ -20,7 +20,7 @@ import javax.annotation.Resource;
 public abstract class IMarketPlugin implements Plugin<MarketParam> {
     protected RedisService redisService;
     protected Logger log = LoggerFactory.getLogger(getClass());
-    private MarketParam marketParam;
+    protected MarketParam param;
 
     //获取token
     protected abstract String getToken();
@@ -85,12 +85,12 @@ public abstract class IMarketPlugin implements Plugin<MarketParam> {
     //根据消息Id删除消息
     public abstract Result delMsg(String... msgId);
 
-    protected MarketParam getMarketParam() {
-        return marketParam;
+    protected MarketParam getParam() {
+        return param;
     }
 
-    protected void setMarketParam(MarketParam marketParam) {
-        this.marketParam = marketParam;
+    protected void setParam(MarketParam param) {
+        this.param = param;
     }
 
     @Resource

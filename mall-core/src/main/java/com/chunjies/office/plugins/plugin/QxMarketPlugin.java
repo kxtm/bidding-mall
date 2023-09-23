@@ -8,6 +8,8 @@ import com.chunjies.office.plugins.model.OrderResponse;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Nonnull;
+
 /**
  * {@code @author} chunjie
  * {@code @time} 2023/9/18
@@ -118,8 +120,8 @@ public class QxMarketPlugin extends IMarketPlugin {
     }
 
     @Override
-    public boolean supports(MarketParam marketParam) {
-        this.setMarketParam(marketParam);
+    public boolean supports(@Nonnull MarketParam marketParam) {
+        this.param=marketParam;
         return marketParam.getType().equals(MarketType.QX.getType());
     }
 }

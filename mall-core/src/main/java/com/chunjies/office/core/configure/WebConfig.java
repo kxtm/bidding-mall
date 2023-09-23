@@ -1,4 +1,4 @@
-package com.chunjies.office.config;
+package com.chunjies.office.core.configure;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

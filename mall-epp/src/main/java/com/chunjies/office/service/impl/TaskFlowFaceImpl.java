@@ -1,6 +1,6 @@
 package com.chunjies.office.service.impl;
 
-import com.chunjies.office.service.IFowFace;
+import com.chunjies.office.service.ITaskFlowFace;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Service;
  */
 
 @Service("flowFace")
-public class FlowFaceImpl implements IFowFace {
+public class TaskFlowFaceImpl implements ITaskFlowFace {
 }

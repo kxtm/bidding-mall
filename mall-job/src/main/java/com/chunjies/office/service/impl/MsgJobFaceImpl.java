@@ -2,6 +2,7 @@ package com.chunjies.office.service.impl;
 
 import com.chunjies.office.service.IMsgJobFace;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * {@code @author} chunjie
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service("msgJobFace")
+@Transactional
 public class MsgJobFaceImpl implements IMsgJobFace {
     @Override
     public void getMsg() {

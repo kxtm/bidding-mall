@@ -2,6 +2,9 @@ package com.chunjies.office;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * {@code @author} chunjie
@@ -11,6 +14,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@EnableAspectJAutoProxy(proxyTargetClass = true)
+@EnableTransactionManagement
+@EnableCaching
 public class MallJobBoot {
     public static void main(String[] args) {
         SpringApplication.run(MallJobBoot.class, args);

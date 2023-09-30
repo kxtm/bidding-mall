@@ -1,9 +1,9 @@
 package com.chunjies.office.core.utils;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -13,8 +13,8 @@ import java.util.UUID;
  * {@code @date: }2023-09-15 22:26
  **/
 @ApiModel(description = "结果返回模型")
-@SuppressWarnings(value = { "unchecked", "rawtypes" })
-public class Result<T> implements Serializable {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Result<T> {
 
     @ApiModelProperty("链路ID")
     private String traceId;
@@ -37,73 +37,41 @@ public class Result<T> implements Serializable {
     }
 
 
-    public static <T> Result ok() {
-        return new Result(DEFAULT_SUCCESS_CODE, DEFAULT_OK_MSG, DEFAULT_DATA);
+    public static <T> Result<T> ok() {
+        return new Result<>(DEFAULT_SUCCESS_CODE, DEFAULT_OK_MSG, null);
     }
 
-    /**
-     * 成功返回信息
-     *
-     * @param msg  消息
-     * @param data 数据
-     * @return
-     */
-    public static <T> Result ok(String msg, T data) {
-        return new Result(DEFAULT_SUCCESS_CODE, msg, data);
+    public static <T> Result<T> ok(String msg, T data) {
+        return new Result<>(DEFAULT_SUCCESS_CODE, msg, data);
     }
 
-    /**
-     * @param msg
-     * @param <T>
-     * @return
-     */
-    public static <T> Result ok(String msg) {
-        return new Result(DEFAULT_SUCCESS_CODE, msg, DEFAULT_DATA);
+
+    public static <T> Result<T> ok(String msg) {
+        return new Result<>(DEFAULT_SUCCESS_CODE, msg, null);
     }
 
-    /**
-     * @param code
-     * @param msg
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> Result ok(int code, String msg, T data) {
-        return new Result(code, msg, data);
+
+    public static <T> Result<T> ok(int code, String msg, T data) {
+        return new Result<>(code, msg, data);
     }
 
-    public static <T> Result error() {
-        return new Result(DEFAULT_ERROR_CODE, DEFAULT_ERROR_MSG, DEFAULT_DATA);
+    public static <T> Result<T> error() {
+        return new Result<>(DEFAULT_ERROR_CODE, DEFAULT_ERROR_MSG, null);
     }
 
-    /**
-     * @param msg
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> Result error(String msg, T data) {
-        return new Result(DEFAULT_ERROR_CODE, msg, data);
+
+    public static <T> Result<T> error(String msg, T data) {
+        return new Result<>(DEFAULT_ERROR_CODE, msg, data);
     }
 
-    /**
-     * @param msg
-     * @param <T>
-     * @return
-     */
-    public static <T> Result error(String msg) {
-        return new Result(DEFAULT_ERROR_CODE, msg, DEFAULT_DATA);
+
+    public static <T> Result<T> error(String msg) {
+        return new Result<>(DEFAULT_ERROR_CODE, msg, null);
     }
 
-    /**
-     * @param code
-     * @param msg
-     * @param data
-     * @param <T>
-     * @return
-     */
-    public static <T> Result error(int code, String msg, T data) {
-        return new Result(code, msg, data);
+
+    public static <T> Result<T> error(int code, String msg, T data) {
+        return new Result<>(code, msg, data);
     }
 
     public int getCode() {
@@ -149,7 +117,6 @@ public class Result<T> implements Serializable {
 
     final static int DEFAULT_SUCCESS_CODE = 1;
     final static int DEFAULT_ERROR_CODE = 0;
-    final static String DEFAULT_DATA = "";
     final static String DEFAULT_OK_MSG = "请求成功";
     final static String DEFAULT_ERROR_MSG = "无效请求";
 

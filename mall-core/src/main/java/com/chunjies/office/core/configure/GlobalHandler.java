@@ -18,23 +18,27 @@ import javax.servlet.http.HttpServletRequest;
 @RestControllerAdvice
 public class GlobalHandler {
     final Logger logger = LoggerFactory.getLogger(GlobalHandler.class);
+
     @ExceptionHandler(Exception.class)
-    public Result<?> handleException(Exception e, HttpServletRequest req) {
+    public Result<String> handleException(Exception e, HttpServletRequest req) {
         logger.error("handleException地址->{},异常信息:", req.getRequestURL(), e);
         return Result.error(e.getMessage());
     }
+
     @ExceptionHandler(RuntimeException.class)
-    public Result<?> handleRunException(Exception e, HttpServletRequest req) {
+    public Result<String> handleRunException(Exception e, HttpServletRequest req) {
         logger.error("handleRunException地址{},异常信息", req.getRequestURL(), e);
         return Result.error("系统错误");
     }
+
     @ExceptionHandler(NoHandlerFoundException.class)
-    public Result<?> noHandleRunException(Exception e, HttpServletRequest req) {
+    public Result<String> noHandleRunException(Exception e, HttpServletRequest req) {
         logger.error("NoFoundException地址{},异常信息", req.getRequestURL(), e);
         return Result.error("请求不存在");
     }
+
     @ExceptionHandler(BindException.class)
-    public Result<?> handleBindException(BindException e, HttpServletRequest req) {
+    public Result<String> handleBindException(BindException e, HttpServletRequest req) {
         logger.error("bindException地址:{},异常信息", req.getRequestURL(), e);
         return Result.error(e.getAllErrors().get(0).getDefaultMessage());
     }

@@ -1,5 +1,6 @@
 package com.chunjies.office.core.configure;
 
+import com.chunjies.office.core.exception.BizException;
 import com.chunjies.office.core.utils.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,23 +25,25 @@ public class GlobalHandler {
         logger.error("handleException地址->{},异常信息:", req.getRequestURL(), e);
         return Result.error(e.getMessage());
     }
-
     @ExceptionHandler(RuntimeException.class)
-    public Result<String> handleRunException(Exception e, HttpServletRequest req) {
+    public Result<String> handleRunException(RuntimeException e, HttpServletRequest req) {
         logger.error("handleRunException地址{},异常信息", req.getRequestURL(), e);
         return Result.error("系统错误");
     }
-
     @ExceptionHandler(NoHandlerFoundException.class)
-    public Result<String> noHandleRunException(Exception e, HttpServletRequest req) {
+    public Result<String> noFoundException(NoHandlerFoundException e, HttpServletRequest req) {
         logger.error("NoFoundException地址{},异常信息", req.getRequestURL(), e);
         return Result.error("请求不存在");
     }
-
     @ExceptionHandler(BindException.class)
     public Result<String> handleBindException(BindException e, HttpServletRequest req) {
         logger.error("bindException地址:{},异常信息", req.getRequestURL(), e);
         return Result.error(e.getAllErrors().get(0).getDefaultMessage());
+    }
+    @ExceptionHandler(BizException.class)
+    public Result<String> handleBizException(BizException e, HttpServletRequest req) {
+        logger.error("bindException地址:{},异常信息", req.getRequestURL(), e);
+        return Result.error(e.getMessage());
     }
 }
 

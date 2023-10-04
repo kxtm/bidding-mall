@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
  * {@code @description}
  */
 @RestController
-@Api(tags = "商城首页")
-@RequestMapping("/api")
+@Api(tags = "商城门户")
+@RequestMapping("/portal")
 public class IndexController extends IController {
     private IOrderFace orderFace;
 
-    @GetMapping("/")
-    @ApiOperation("获取数据")
+    @GetMapping("/getData")
+    @ApiOperation("获取首页数据")
     public Result index() {
         return orderFace.createOrder();
     }

@@ -15,12 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Api(tags = "仪表盘模块")
-@RequestMapping("/api/dash")
+@RequestMapping("/dashBoard")
 public class DashController extends IController {
 
     @GetMapping("/user")
     @ApiOperation("用户仪表盘")
     public Result userBoard() {
+
+        return Result.error();
+    }
+
+    @GetMapping("/system")
+    @ApiOperation("系统管理员仪表盘")
+    public Result sysBoard() {
 
         return Result.error();
     }

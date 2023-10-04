@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Api(tags = "用户模块")
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController extends IController {
 
 

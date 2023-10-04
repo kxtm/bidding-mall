@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@Api(tags = "用户模块")
+@Api(tags = "用户接口")
 @RequestMapping("/user")
 public class UserController extends IController {
 
 
     @GetMapping("/getUserInfo")
     @ApiOperation("获取用户信息")
-    public Result userInfo(){
+    public Result<String> userInfo(){
         return Result.error();
     }
 }

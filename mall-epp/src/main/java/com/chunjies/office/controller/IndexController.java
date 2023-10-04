@@ -23,7 +23,7 @@ public class IndexController extends IController {
 
     @GetMapping("/getData")
     @ApiOperation("获取首页数据")
-    public Result index() {
+    public Result<String> index() {
         return orderFace.createOrder();
     }
 

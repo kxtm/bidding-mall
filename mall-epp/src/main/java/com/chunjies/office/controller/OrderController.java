@@ -8,28 +8,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * {@code @author:} chunjie
- * {@code @date:} 2023-09-15 22:23
- **/
-
 @RestController
-@Api(tags = "仪表盘")
-@RequestMapping("/dashBoard")
-public class DashController extends IController {
+@RequestMapping("/order")
+@Api(tags = "订单相关")
+public class OrderController extends IController {
 
-    @GetMapping("/user")
-    @ApiOperation("用户仪表盘")
-    public Result<String> userBoard() {
 
+    @GetMapping("/list")
+    @ApiOperation("获取订单列表")
+    public Result<String> orderList() {
         return Result.error();
     }
-
-    @GetMapping("/system")
-    @ApiOperation("系统管理员仪表盘")
-    public Result<String> sysBoard() {
-
-        return Result.error();
-    }
-
 }

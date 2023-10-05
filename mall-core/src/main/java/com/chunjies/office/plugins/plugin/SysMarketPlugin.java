@@ -21,7 +21,7 @@ import javax.annotation.Nonnull;
 public class SysMarketPlugin extends IMarketPlugin {
     @Override
     protected String getToken() {
-        Assert.notNull(this.redisService, "不能为空");
+        Assert.notNull(this.redisCache, "不能为空");
         log.error("公共获取Token请求-》{}", getParam().getType());
         return "";
     }

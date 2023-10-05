@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/order")
-@Api(tags = "订单相关")
+@Api(tags = "订单接口")
 public class OrderController extends IController {
 
 
     @GetMapping("/list")
-    @ApiOperation("获取订单列表")
+    @ApiOperation("订单列表")
     public Result<String> orderList() {
         return Result.error();
     }

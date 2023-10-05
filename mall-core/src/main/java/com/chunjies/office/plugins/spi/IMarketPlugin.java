@@ -4,7 +4,7 @@ import com.chunjies.office.core.utils.Result;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;
-import com.chunjies.ofiice.redis.RedisService;
+import com.chunjies.ofiice.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.plugin.core.Plugin;
@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  */
 
 public abstract class IMarketPlugin implements Plugin<MarketParam> {
-    protected RedisService redisService;
+    protected RedisCache redisCache;
     protected Logger log = LoggerFactory.getLogger(getClass());
     protected MarketParam param;
 
@@ -94,7 +94,7 @@ public abstract class IMarketPlugin implements Plugin<MarketParam> {
     }
 
     @Resource
-    public void setRedisService(RedisService redisService) {
-        this.redisService = redisService;
+    public void setRedisService(RedisCache redisCache) {
+        this.redisCache = redisCache;
     }
 }

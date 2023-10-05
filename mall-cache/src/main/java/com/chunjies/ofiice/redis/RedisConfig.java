@@ -1,4 +1,4 @@
-package com.chunjies.ofiice.cache;
+package com.chunjies.ofiice.redis;
 
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;

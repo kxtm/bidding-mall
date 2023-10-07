@@ -35,6 +35,11 @@ public class InvoiceController extends IController {
         return Result.error();
     }
 
+    @PostMapping("/delete")
+    @ApiOperation("删除发票")
+    public Result<String> deleteInvoiceInfo() {
+        return Result.error();
+    }
 
     @GetMapping("/applyList")
     @ApiOperation("开票申请列表")
@@ -49,9 +54,15 @@ public class InvoiceController extends IController {
         return Result.error();
     }
 
-    @GetMapping("/getApplyDetail")
+    @GetMapping("/applyDetail")
     @ApiOperation("获取开票申请详情")
     public Result<?> getInvoiceApplyDetail() {
+        return Result.error();
+    }
+
+    @PostMapping("/delteApply")
+    @ApiOperation("删除开票申请")
+    public Result<String> deleteInvoiceApply() {
         return Result.error();
     }
 

@@ -32,4 +32,16 @@ public class NoticeController extends IController {
 
         return Result.error();
     }
+
+    @GetMapping("/detail")
+    @ApiOperation("公告详情")
+    public Result<String> noticeDetail() {
+        return Result.error();
+    }
+
+    @PostMapping("/delete")
+    @ApiOperation("删除公告")
+    public Result<String> deleteNotice() {
+        return Result.error();
+    }
 }

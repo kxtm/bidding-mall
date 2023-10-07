@@ -26,9 +26,8 @@ public class DashController extends IController {
     }
 
     @GetMapping("/system")
-    @ApiOperation("系统管理员仪表盘")
-    public Result<String> sysBoard() {
-
+    @ApiOperation("管理员仪表盘")
+    public Result<String> adminBoard() {
         return Result.error();
     }
 

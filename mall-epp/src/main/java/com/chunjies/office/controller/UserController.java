@@ -4,9 +4,7 @@ import com.chunjies.office.core.base.IController;
 import com.chunjies.office.core.base.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * {@code @author} chunjie
@@ -20,9 +18,29 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController extends IController {
 
 
-    @GetMapping("/getUserInfo")
-    @ApiOperation("获取用户信息")
-    public Result<String> userInfo(){
+    @GetMapping("/list")
+    @ApiOperation("用户列表")
+    public Result<String> userList() {
         return Result.error();
     }
+
+    @PostMapping("/save")
+    @ApiOperation("保存用户")
+    public Result<String> saveUser() {
+        return Result.error();
+    }
+
+    @GetMapping("/detail")
+    @ApiOperation("用户详情")
+    public Result<String> userDetail() {
+        return Result.error();
+    }
+
+
+    @PostMapping("/delete")
+    @ApiOperation("删除用户非物理删除")
+    public Result<String> deleteUser() {
+        return Result.error();
+    }
+
 }

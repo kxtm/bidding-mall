@@ -1,4 +1,4 @@
-package com.chunjies.office.core.utils;
+package com.chunjies.office.core.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
@@ -13,7 +13,7 @@ import java.util.UUID;
  * {@code @author:} chunjie
  * {@code @date: }2023-09-15 22:26
  **/
-@ApiModel(description = "结果返回模型")
+@ApiModel("结果模型")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result<T> implements Serializable {
 

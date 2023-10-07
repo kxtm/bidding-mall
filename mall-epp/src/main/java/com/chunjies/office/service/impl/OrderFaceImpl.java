@@ -1,7 +1,7 @@
 package com.chunjies.office.service.impl;
 
 import com.chunjies.office.core.enums.MarketType;
-import com.chunjies.office.core.utils.Result;
+import com.chunjies.office.core.base.Result;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
 import com.chunjies.office.service.IOrderFace;

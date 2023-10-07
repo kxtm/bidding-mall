@@ -1,9 +1,11 @@
-package com.chunjies.office.config;
+package com.chunjies.office.core.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.auth0.jwt.interfaces.JWTVerifier;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Date;
 
@@ -13,6 +15,8 @@ import java.util.Date;
  * {@code @description}
  */
 public class JwtUtils {
+
+    final static Logger logger = LoggerFactory.getLogger(JwtUtils.class);
     private static final String secret = "test123456";
 
     /**
@@ -42,18 +46,11 @@ public class JwtUtils {
     public static boolean verify(String token, String userName) {
         try {
             JWTVerifier verifier = JWT.require(Algorithm.HMAC512(userName + secret)).build();
-            DecodedJWT jwt = verifier.verify(token);
-            System.out.println(jwt.getClaim("username").asString());
-            return jwt.getClaim("username").asString().equals(userName);
+            DecodedJWT decoded = verifier.verify(token);
+            return new Date().before(decoded.getExpiresAt());
         } catch (Exception e) {
-            System.out.println(e);
+            logger.error("验证异常", e);
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        String token = auth("admin", "aaaaaaaaaaaaaaaaaa");
-        System.out.println(token);
-        verify(token, "admin");
     }
 }

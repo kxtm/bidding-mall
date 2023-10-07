@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -14,7 +15,7 @@ import java.util.UUID;
  **/
 @ApiModel(description = "结果返回模型")
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Result<T> {
+public class Result<T> implements Serializable {
 
     @ApiModelProperty("链路ID")
     private String traceId;

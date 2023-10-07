@@ -2,6 +2,7 @@ package com.chunjies.ofiice.cache;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundSetOperations;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -16,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * {@code @time} 2023/9/20
  * {@code @description}
  */
-@Component("redisService")
+@Component("redisCache")
 @SuppressWarnings(value = { "unchecked", "rawtypes" })
 public class RedisCache {
 
@@ -242,6 +243,8 @@ public class RedisCache {
     {
         return redisTemplate.keys(pattern);
     }
+
+    @Autowired
     public void setRedisTemplate(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
     }

@@ -9,7 +9,6 @@ import com.chunjies.ofiice.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.plugin.core.PluginRegistry;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -31,7 +30,6 @@ public class OrderFaceImpl implements IOrderFace {
     private RedisCache redisCache;
 
     @Override
-    @Cacheable(cacheNames = "createOrder")
     public Result createOrder() {
         log.error("请求来了");
         Assert.notNull(redisCache, "不能为空");
@@ -48,7 +46,8 @@ public class OrderFaceImpl implements IOrderFace {
 
 
     @Autowired
-    public void setRedisService(RedisCache redisCache) {
+
+    public void setRedisCache(RedisCache redisCache) {
         this.redisCache = redisCache;
     }
 }

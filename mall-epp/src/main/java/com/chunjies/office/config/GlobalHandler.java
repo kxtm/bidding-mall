@@ -1,4 +1,4 @@
-package com.chunjies.office.core.configure;
+package com.chunjies.office.config;
 
 import com.chunjies.office.core.exception.BizException;
 import com.chunjies.office.core.utils.Result;

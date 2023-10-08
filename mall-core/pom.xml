@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.chunjies.office</groupId>
-        <artifactId>office-mall-system</artifactId>
+        <artifactId>office-mall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 

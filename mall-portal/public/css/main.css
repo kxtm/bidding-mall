@@ -1,4 +1,5 @@
 @import 'base.css';
+button,input,select{outline: none !important;}
 #app {
   margin: 0 auto;
   height: 100%;

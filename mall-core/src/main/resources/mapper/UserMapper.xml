@@ -232,7 +232,7 @@
         modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
+    where User_Id = #{userId}
   </update>
 
 </mapper>

@@ -2,17 +2,17 @@ package com.chunjies.office.core.enums;
 
 /**
  * {@code @author} chunjie
- * {@code @time} 2023/9/18
+ * {@code @time} 2023/10/9
  * {@code @description}
  */
-public enum OrderStatus {
-    FREEZE(-1, "冻结");
+public enum UserState {
+    FREEZE(-1, "冻结"), DISABLE(0, "禁用"), ENABLE(1, "正常");
 
     private int status;
 
     private String desc;
 
-    OrderStatus(int status, String desc) {
+    UserState(int status, String desc) {
         this.status = status;
         this.desc = desc;
     }

@@ -14,7 +14,7 @@
     <name>office-mall</name>
     <modules>
         <module>mall-core</module>
-        <module>mall-epp</module>
+        <module>mall-starter</module>
         <module>mall-job</module>
         <module>mall-cache</module>
     </modules>

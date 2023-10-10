@@ -10,13 +10,13 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface UserMapper {
-    User selectByUserId(String id);
+    User selectByUserId(String userId);
 
-    int insertUser(User record);
+    int insertUser(User user);
 
-    int updateByUserId(User record);
+    int updateByUserId(User user);
 
-    int deleteByUserId(String id);
+    int deleteByUserId(String userId);
 
 
 }

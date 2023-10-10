@@ -150,7 +150,7 @@
         modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=BIGINT}
+    where userId = #{userId} and org_id = #{orgId}
   </update>
 
 </mapper>

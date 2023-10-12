@@ -5,7 +5,7 @@
   <div class="footer">
     <div class="container">
       <div class="row">
-        <div>
+        <div style="text-align: center;">
           重要提示：公司所有信息系统不得存储、处理、传输涉及国家秘密的信息；本网站内的公文、数据、信息等均属公司内部信息，不得擅自对外泄露。
         </div>
         <div class="col-sm-4">
@@ -14,7 +14,7 @@
           <div class="">运维支持邮箱：jt-caigou@picc.com.cn</div>
         </div>
         <div class="col-sm-8">
-            <div>供应商咨询热线</div>
+            <div style="text-align: center">供应商咨询热线</div>
             <div class="col-md-4">晨光：4001188366</div>
             <div class="col-md-4">得力：0574-59985187</div>
             <div class="col-md-4">领先未来：4008881123</div>
@@ -36,4 +36,5 @@
 }
 .footer .row{margin: 20px;}
 .footer .col-sm-4,.footer .col-sm-8{padding: 15px;}
+.footer .col-sm-4{text-align: left;}
 </style>

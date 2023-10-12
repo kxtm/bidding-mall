@@ -1,4 +1,4 @@
-package com.chunjies.office.form;
+package com.chunjies.office.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 @ApiModel("登录模型")
-public class LoginForm implements Serializable {
+public class LoginUser implements Serializable {
 
     @ApiModelProperty(value = "用户名:数字或字母", required = true)
     @Pattern(regexp = "^[A-Za-z0-9]+$", message = "用户名格式错误")

@@ -3,7 +3,7 @@ package com.chunjies.office.controller;
 import com.chunjies.office.core.base.IController;
 import com.chunjies.office.core.utils.JwtUtils;
 import com.chunjies.office.core.base.Result;
-import com.chunjies.office.form.LoginForm;
+import com.chunjies.office.domain.LoginUser;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
 import io.swagger.annotations.Api;
@@ -28,7 +28,7 @@ public class LoginController extends IController {
 
     @PostMapping("/login")
     @ApiOperation("用户登录")
-    public Result<String> login(@Validated @RequestBody LoginForm loginForm, @ApiIgnore HttpSession session, @ApiIgnore HttpServletResponse response) {
+    public Result<String> login(@Validated @RequestBody LoginUser loginForm, @ApiIgnore HttpSession session, @ApiIgnore HttpServletResponse response) {
         String token = JwtUtils.auth("admin", "");
         response.addHeader("token", token);
         session.setAttribute("user", "admin");

@@ -32,20 +32,36 @@
     <div class="logo"><img src="/logo.jpg" alt="logo"></div>
     <div class="col-lg-7  input-group search">
       <input type="text" class="form-control search-input" placeholder="请输入搜索内容">
-      <span class="input-group-btn"><button class="btn btn-default search-btn" type="button"><i
-          class="glyphicon glyphicon-search"></i></button></span>
+      <span class="input-group-btn"><button class="btn btn-default search-btn" type="button"><i class="glyphicon glyphicon-search"></i></button></span>
     </div>
     <div class="search-right">
       <button class="btn btn-default"><i class="glyphicon glyphicon-shopping-cart"></i>购物车</button>
     </div>
   </div>
-  <div class="cate-navbar">
-    <div class="container cate">
-      <div class="cate-list"><div class="cate-title"><i class="glyphicon glyphicon-list"></i>商品分类</div></div>
-      <div class="cate-channel">
-         <div>营销礼品</div>
-         <div>办公用品</div>
+  <div class="channel-navbar">
+    <div class="container channel">
+        <div class="cate-title"><i class="glyphicon glyphicon-list"></i>商品分类</div>
+        <div class="channel-list">
+          <div class="channel-item">营销礼品</div>
+          <div class="channel-item">办公用品</div>
+          <div class="channel-item">协议商品</div>
+        </div>
       </div>
-    </div>
+  </div>
+  <div class="container content">
+      <div class="cate-list">
+        aaaaaaaaaaaaa
+      </div>
+      <div class="banner-list">
+        aaaaaaaaaa
+      </div>
+      <div class="work-list">
+         <div class="work-list-item">
+           aaaaaa
+         </div>
+         <div class="work-notice">
+           aaaaaaaaa
+         </div>
+      </div>
   </div>
 </template>

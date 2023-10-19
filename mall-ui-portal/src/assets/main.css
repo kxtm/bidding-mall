@@ -72,6 +72,7 @@ button, input, select {
     display: flex;
     align-items: center;
     padding: 25px 0;
+    bottom: 20px;
 }
 .logo img{width: 265px;}
 .search{margin: 0 35px;}
@@ -81,7 +82,12 @@ button, input, select {
 .search-right{padding: 0 30px;}
 .search-right>button{height: 46px;width: 100px;}
 .search-right .glyphicon-shopping-cart{color:var(--vt-c-red);}
-.cate-navbar{background: var(--vt-c-red);color: var(--vt-c-white);height: 50px;display: flex;}
-.cate-navbar.cate{display: flex;}
-.cate-title{margin: 10px 0;font-size: 18px;width: 300px;display: flex;}
-.cate-channel{display: flex;}
+.channel-navbar{background: var(--vt-c-red);height: 50px;}
+.channel{display: flex;align-items: center;color: var(--vt-c-white)}
+.cate-title{padding: 15px 0;font-size: 18px;width: 280px;}
+.channel-list{display: flex;}
+.channel-item{padding: 15px;}
+.content{display: flex;}
+.cate-list{width: 280px;}
+.banner-list{width: 500px;}
+.work-list{width: 10%;}

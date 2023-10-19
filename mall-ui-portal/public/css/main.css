@@ -1,8 +1,0 @@
-@import 'base.css';
-button,input,select{outline: none !important;}
-#app {
-  margin: 0 auto;
-  height: 100%;
-}
-#app .navbar{border-radius: 0;}
-.main{min-height: 100%;}

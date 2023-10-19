@@ -1,0 +1,87 @@
+:root {
+    --vt-c-white: #ffffff;
+    --vt-c-red:#E8340C;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: color 0.5s, background-color 0.5s;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button, input, select {
+    outline: none !important;
+}
+
+.navbar-collapse {
+    padding: 0;
+}
+
+.container {
+    padding: 0;
+}
+
+.navbar {
+    border-radius: 0;
+    min-height: 30px;
+}
+
+.line {
+    width: 1px;
+    height: 10px;
+    background-color: #ccc;
+    top: 10px;
+}
+
+#app {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+#app .header-top-bar {
+    background: #eff1f3;
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .65);
+}
+
+.glyphicon-map {
+    color: var(--vt-c-red);
+    top: 4px;
+}
+
+#app .nav > li > a {
+    display: flex;
+    padding: 4px 0;
+}
+
+#app .navbar-right > li > a {
+    padding: 4px 6px;
+}
+
+#app .header-search {
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+}
+.logo img{width: 265px;}
+.search{margin: 0 35px;}
+.search-input{height: 40px;border: 1px solid var(--vt-c-red)}
+.search-btn{height: 40px;color: #fff;background-color:var(--vt-c-red);border-color: var(--vt-c-red);}
+.search-btn .glyphicon{font-size: 20px;}
+.search-right{padding: 0 30px;}
+.search-right>button{height: 46px;width: 100px;}
+.search-right .glyphicon-shopping-cart{color:var(--vt-c-red);}
+.cate-navbar{background: var(--vt-c-red);color: var(--vt-c-white);height: 50px;display: flex;}
+.cate-navbar.cate{display: flex;}
+.cate-title{margin: 10px 0;font-size: 18px;width: 300px;display: flex;}
+.cate-channel{display: flex;}

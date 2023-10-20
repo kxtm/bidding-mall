@@ -43,7 +43,7 @@
   <div class="channel-navbar">
     <div class="container channel">
       <div class="row">
-        <div class="col-md-2 cate-title"><i class="glyphicon glyphicon-list"></i>商品分类</div>
+        <div class="col-md-2 cate-title"><i class="glyphicon glyphicon-th"></i>商品分类</div>
         <div class="col-md-9 channel-list">
           <div class="col-md-1 channel-item"><a href="#">营销礼品</a></div>
           <div class="col-md-1 channel-item"><a href="#">办公用品</a></div>
@@ -63,23 +63,52 @@
   <div class="container">
     <div class="row focus-content">
       <div class="col-md-2" id="category-list">
-         <div class="category-left-item">
-           <div><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-           <div class="category-detail-items"></div>
-         </div>
+         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
 
+        <div class="category-detail-items">
+           <div><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
+             <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
+             <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
+             <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
+             <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
+             <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
+           </div>
+        </div>
       </div>
       <div class="col-md-7" id="banner-list">
-        aaaaaaaaaa
+        <div class="jumbotron">
+          <h1>Hello, world!</h1>
+          <p>...</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+        </div>
       </div>
 
-      <div class="col-md-3" id="work-list">
-        <div class="work-list-item">
-          aaaaaa
-        </div>
-        <div class="work-notice">
-          aaaaaaaaa
-        </div>
+      <div class="col-md-3" id="work-wrapper">
+            <div>王天宇,欢迎您</div>
+            <div class="work-list">
+               <a class="work-list-item"><i class="glyphicon glyphicon-th-list"></i><div>我的待办</div></a>
+               <a class="work-list-item"><i class="glyphicon glyphicon-book"></i><div>我的需求</div></a>
+            </div>
+            <div class="work-notice">
+              公告区
+            </div>
       </div>
     </div>
 

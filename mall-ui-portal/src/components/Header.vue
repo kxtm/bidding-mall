@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <header class="navbar navbar-default header-top-bar">
     <div class="container">
@@ -28,40 +25,76 @@
       </div>
     </div>
   </header>
-  <div class="container header-search">
-    <div class="logo"><img src="/logo.jpg" alt="logo"></div>
-    <div class="col-lg-7  input-group search">
-      <input type="text" class="form-control search-input" placeholder="请输入搜索内容">
-      <span class="input-group-btn"><button class="btn btn-default search-btn" type="button"><i class="glyphicon glyphicon-search"></i></button></span>
-    </div>
-    <div class="search-right">
-      <button class="btn btn-default"><i class="glyphicon glyphicon-shopping-cart"></i>购物车</button>
+  <div class="container">
+    <div class="row  header-search">
+      <div class="col-md-3 logo"><img src="/logo.jpg" alt="logo"></div>
+      <div class="col-md-7 search">
+           <div class="input-group">
+                 <input type="text" class="form-control" id="search-input" placeholder="请输入搜索内容">
+                <span class="input-group-btn"><button class="btn btn-default" id="search-btn" type="button"><i class="glyphicon glyphicon-search"></i></button></span>
+           </div>
+           <div id="hot-words"><a href="#">中性笔</a><a href="#">文件袋</a></div>
+      </div>
+      <div class="col-md-2 search-right">
+        <button class="btn btn-default" id="cart-btn" @click="handleClick"><i class="glyphicon glyphicon-shopping-cart"></i>购物车</button>
+      </div>
     </div>
   </div>
   <div class="channel-navbar">
     <div class="container channel">
-        <div class="cate-title"><i class="glyphicon glyphicon-list"></i>商品分类</div>
-        <div class="channel-list">
-          <div class="channel-item">营销礼品</div>
-          <div class="channel-item">办公用品</div>
-          <div class="channel-item">协议商品</div>
+      <div class="row">
+        <div class="col-md-2 cate-title"><i class="glyphicon glyphicon-list"></i>商品分类</div>
+        <div class="col-md-9 channel-list">
+          <div class="col-md-1 channel-item"><a href="#">营销礼品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">办公用品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
+          <div class="col-md-1 channel-item"><a href="#">协议商品</a></div>
         </div>
       </div>
+    </div>
   </div>
-  <div class="container content">
-      <div class="cate-list">
-        aaaaaaaaaaaaa
+  <!--分类 banner  工作区-->
+  <div class="container">
+    <div class="row focus-content">
+      <div class="col-md-2" id="category-list">
+         <div class="category-left-item">
+           <div><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+           <div class="category-detail-items"></div>
+         </div>
+
       </div>
-      <div class="banner-list">
+      <div class="col-md-7" id="banner-list">
         aaaaaaaaaa
       </div>
-      <div class="work-list">
-         <div class="work-list-item">
-           aaaaaa
-         </div>
-         <div class="work-notice">
-           aaaaaaaaa
-         </div>
+
+      <div class="col-md-3" id="work-list">
+        <div class="work-list-item">
+          aaaaaa
+        </div>
+        <div class="work-notice">
+          aaaaaaaaa
+        </div>
       </div>
+    </div>
+
   </div>
 </template>
+<script >
+   export  default {
+
+     methods:{
+       handleClick:function () {
+         alert(111)
+       },
+       showCate:function (){
+         $(".category-detail-items").show();
+       }
+     }
+   }
+</script>

@@ -61,8 +61,8 @@
   </div>
   <!--分类 banner  工作区-->
   <div class="container">
-    <div class="row focus-content">
-      <div class="col-md-2" id="category-list">
+    <div class="row content-wrapper">
+      <div class="col-md-2" id="category-wrapper">
          <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
@@ -78,10 +78,6 @@
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-
         <div class="category-detail-items">
            <div><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
              <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
@@ -92,7 +88,7 @@
            </div>
         </div>
       </div>
-      <div class="col-md-7" id="banner-list">
+      <div class="col-md-6" id="banner-wrapper">
         <div class="jumbotron">
           <h1>Hello, world!</h1>
           <p>...</p>

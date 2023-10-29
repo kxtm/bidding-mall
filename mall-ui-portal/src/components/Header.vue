@@ -25,8 +25,8 @@
       </div>
     </div>
   </header>
-  <div class="container">
-    <div class="row  header-search">
+  <div class="container-fluid search-wrapper">
+    <div class="container  header-search">
       <div class="col-md-3 logo"><img src="/logo.jpg" alt="logo"></div>
       <div class="col-md-7 search">
            <div class="input-group">
@@ -63,7 +63,7 @@
   <div class="container">
     <div class="row content-wrapper">
       <div class="col-md-2" id="category-wrapper">
-         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
+         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋袋</span><span>文件袋袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
@@ -75,10 +75,7 @@
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
         <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-left-item"><a @click="showCate">办公文具</a> <span>文件袋</span><span>文件袋</span><span>文件袋</span></div>
-        <div class="category-detail-items">
+        <div class="row category-detail-items">
            <div><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
              <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>
              <span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span><span>办公用品</span>

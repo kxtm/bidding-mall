@@ -18,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
  * {@code @time} 2023/10/7
  * {@code @description}
  */
-public class AuthInterceptor implements HandlerInterceptor {
+public class AuthConfig implements HandlerInterceptor {
 
-    final Logger logger = LoggerFactory.getLogger(AuthInterceptor.class);
+    final Logger logger = LoggerFactory.getLogger(AuthConfig.class);
 
     @Override
     public boolean preHandle(HttpServletRequest request, @NonNull HttpServletResponse resp,@NonNull Object handler) throws Exception {

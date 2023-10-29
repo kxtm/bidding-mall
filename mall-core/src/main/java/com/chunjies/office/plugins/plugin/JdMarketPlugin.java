@@ -1,14 +1,13 @@
 package com.chunjies.office.plugins.plugin;
 
-import com.chunjies.office.core.enums.MarketType;
 import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.enums.MarketType;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Nonnull;
 
 /**
  * {@code @author} chunjie
@@ -16,7 +15,7 @@ import javax.annotation.Nonnull;
  * {@code @description}
  */
 @Component
-@SuppressWarnings(value = {"unchecked", "rawtypes"})
+@SuppressWarnings(value = {"rawtypes"})
 public class JdMarketPlugin extends IMarketPlugin {
     protected String getToken() {
         this.log.error("京东->{}", this.getParam().getType());
@@ -120,7 +119,7 @@ public class JdMarketPlugin extends IMarketPlugin {
     }
 
     @Override
-    public boolean supports(@Nonnull MarketParam marketParam) {
+    public boolean supports(@NonNull MarketParam marketParam) {
         this.param = marketParam;
         return marketParam.getType().equals(MarketType.JD.getType());
     }

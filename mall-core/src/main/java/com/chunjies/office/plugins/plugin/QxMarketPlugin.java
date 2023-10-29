@@ -6,9 +6,10 @@ import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Nonnull;
+
 
 /**
  * {@code @author} chunjie
@@ -16,7 +17,7 @@ import javax.annotation.Nonnull;
  * {@code @description}
  */
 @Component
-@SuppressWarnings(value = { "unchecked", "rawtypes" })
+@SuppressWarnings(value = {"rawtypes" })
 public class QxMarketPlugin extends IMarketPlugin {
     protected String getToken() {
         System.out.println("齐心接口");
@@ -120,7 +121,7 @@ public class QxMarketPlugin extends IMarketPlugin {
     }
 
     @Override
-    public boolean supports(@Nonnull MarketParam marketParam) {
+    public boolean supports(@NonNull  MarketParam marketParam) {
         this.param=marketParam;
         return marketParam.getType().equals(MarketType.QX.getType());
     }

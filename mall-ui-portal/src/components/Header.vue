@@ -80,8 +80,10 @@
         </div>
       </div>
       <div class="col-md-6" id="banner-wrapper">
-        <div class="banner-btn" id="banner-prev"></div>
-        <div><img src="/images/banner1.jpg" alt="banner"></div>
+        <div class="banner-btn" id="banner-prev" ></div>
+        <div><a href="#"><img src="/images/banner1.jpg" alt="banner"></a></div>
+        <div><a href="#"><img src="/images/banner1.jpg" alt="banner"></a></div>
+        <div><a href="#"><img src="/images/banner1.jpg" alt="banner"></a></div>
         <div class="banner-btn" id="banner-next"></div>
       </div>
 

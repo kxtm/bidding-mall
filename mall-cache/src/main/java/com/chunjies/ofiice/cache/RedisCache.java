@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * {@code @description}
  */
 @Component("redisCache")
-@SuppressWarnings(value = { "unchecked", "rawtypes" })
+@SuppressWarnings("all")
 public class RedisCache {
 
     final Logger log = LoggerFactory.getLogger(getClass());

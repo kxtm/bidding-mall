@@ -101,6 +101,9 @@
                     <div class="swiper-slide"><a href="#"><img src="/images/banner1.jpg" alt="banner"></a></div>
                     <div class="swiper-slide">slide3</div>
                 </div>
+              <div id="banner-prev" class="banner-btn swiper-button-prev"></div><!--左箭头。如果放置在swiper外面，需要自定义样式。-->
+              <div id="banner-next" class="banner-btn swiper-button-next"></div><!--右箭头。如果放置在swiper外面，需要自定义样式。-->
+              <div class="swiper-pagination"></div>
             </div>
 
             <div class="col-md-3" id="work-wrapper">
@@ -132,11 +135,7 @@
     }
     onMounted(() => {
         let mySwiper = new Swiper('.swiper', {
-            autoplay: {
-                delay: 2000,
-                // stopOnLastSlide: false,
-                // disableOnInteraction: true,
-            },
+            autoplay:true,
             loop:true,
             navigation:{
                 nextEl: '.swiper-button-next',

@@ -286,3 +286,6 @@ a{
     background-image: url("/images/banner-right.png");
     right: 0;
 }
+#banner-prev:after,#banner-next:after{
+    content: '';
+}

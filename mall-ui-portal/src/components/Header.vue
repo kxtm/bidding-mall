@@ -117,7 +117,7 @@
                     </a>
                 </div>
                 <div class="work-notice">
-                    公告区
+                    公告资讯
                 </div>
             </div>
         </div>

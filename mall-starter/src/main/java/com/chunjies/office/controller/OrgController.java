@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/org")
 @Api(tags = "机构接口")
-public class OrganController extends IController {
+public class OrgController extends IController {
 
     @GetMapping("/list")
     @ApiOperation("第一层节点")

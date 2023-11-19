@@ -1,8 +1,8 @@
 package com.chunjies.office.controller;
 
 import com.chunjies.office.core.base.IController;
-import com.chunjies.office.core.utils.JwtUtils;
 import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.utils.JwtUtils;
 import com.chunjies.office.domain.LoginUser;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
@@ -14,6 +14,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.io.IOException;
 
 /**

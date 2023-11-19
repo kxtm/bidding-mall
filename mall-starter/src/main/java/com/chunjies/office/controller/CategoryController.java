@@ -16,7 +16,7 @@ public class CategoryController extends IController {
 
 
     @GetMapping("/list")
-    @ApiOperation("所有一级商品分类")
+    @ApiOperation("查询一级商品分类")
     public Result<String> categoryList() {
         return Result.error();
     }
@@ -34,13 +34,13 @@ public class CategoryController extends IController {
     }
 
     @GetMapping("/detail")
-    @ApiOperation("查询分类详情")
+    @ApiOperation("分类详情")
     public Result<String> cateDetail() {
         return Result.error();
     }
 
     @PostMapping("/delete")
-    @ApiOperation("保存分类")
+    @ApiOperation("删除分类")
     public Result<String> deleteCategory() {
         return Result.error();
     }

@@ -56,7 +56,9 @@ public class GlobalAdvice {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        logger.error("handleMethodArgumentNotValidException 异常信息:", e);
+        e.getBindingResult().getAllErrors().forEach(c->{
+            logger.error("handleMethodArgumentNotValidException 异常信息:{}", c.getDefaultMessage());
+        });
         return Result.error(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
     }
 

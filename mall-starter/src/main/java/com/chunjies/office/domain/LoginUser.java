@@ -11,16 +11,13 @@ import java.io.Serializable;
 public class LoginUser implements Serializable {
 
     @ApiModelProperty(value = "用户名:数字或字母", required = true)
-    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "用户名格式错误")
-    @NotBlank(message = "用户名不能为空")
+    @Pattern(regexp = "^[A-Za-z0-9]+$",  message = "用户名或密码错误")
     private String userName;
     @ApiModelProperty(value = "用户密码", required = true)
-    @NotBlank(message = "密码不能为空")
+    @NotBlank(message = "用户名或密码错误")
     private String passwd;
-
-
     @ApiModelProperty(value = "验证码", required = true)
-    @NotBlank(message = "验证码不能为空")
+    @NotBlank(message = "验证码格式错误")
     private String code;
 
     public String getUserName() {

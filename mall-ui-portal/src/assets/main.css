@@ -118,33 +118,31 @@ a{
     height: 40px;
     border: 1px solid var(--vt-c-red)
 }
-
 #search-btn {
     height: 40px;
     color: #fff;
     background-color: var(--vt-c-red);
     border-color: var(--vt-c-red);
 }
-
 #search-btn .glyphicon {
     font-size: 20px;
 }
-
 .search-right {
     text-align: center;
 }
-
 #hot-words {
     overflow: hidden;
-    padding: 5px;
     font-size: 12px;
+    word-break:break-word;
 }
-
 #hot-words a {
     float: left;
-    margin-right: 10px;
+    margin: 5px;
     white-space: nowrap;
     color: #999;
+}
+#hot-words a:first-child{
+    color: var(--vt-c-red);
 }
 
 #cart-btn {

@@ -25,6 +25,7 @@
             </div>
         </div>
     </header>
+  <div class="clearfix"></div>
     <div class="container-fluid search-wrapper">
         <div class="container  header-search">
             <div class="col-md-3 logo"><img src="/logo.jpg" alt="logo"></div>

@@ -7,8 +7,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
-@ApiModel("登录模型")
-public class LoginUser implements Serializable {
+@ApiModel("登录对象")
+public class LoginDto implements Serializable {
 
     @ApiModelProperty(value = "用户名:数字或字母", required = true)
     @Pattern(regexp = "^[A-Za-z0-9]+$",  message = "用户名或密码错误")
@@ -17,7 +17,7 @@ public class LoginUser implements Serializable {
     @NotBlank(message = "用户名或密码错误")
     private String passwd;
     @ApiModelProperty(value = "验证码", required = true)
-    @NotBlank(message = "验证码格式错误")
+    @NotBlank(message = "验证码错误")
     private String code;
 
     public String getUserName() {

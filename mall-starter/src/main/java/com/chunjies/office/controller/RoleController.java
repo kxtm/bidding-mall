@@ -43,4 +43,11 @@ public class RoleController extends IController {
     public Result<String> deleteRole() {
         return Result.error();
     }
+
+    @PostMapping("/saveCategory")
+    @ApiOperation("保存角色分类")
+    public Result<String> saveRoleCategory() {
+        return Result.error();
+    }
+
 }

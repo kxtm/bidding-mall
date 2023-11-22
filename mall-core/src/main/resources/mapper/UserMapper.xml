@@ -25,14 +25,14 @@
     <result column="modify_Time" property="modifyTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    User_Id, User_Code, User_Pwd, User_Name, User_Name_enc, User_Sex, user_type,
-    user_status, user_email, user_email_enc, user_tel, user_tel_enc, user_mobile, user_mobile_enc, 
+    user_id, User_Code, User_Pwd, User_Name, User_Name_enc, User_Sex, user_type,
+    user_status, user_email, user_email_enc, user_tel, user_tel_enc, user_mobile, user_mobile_enc,
     create_Pk, create_By, create_Time, modify_Pk, modify_By, modify_Time
   </sql>
   <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select   <include refid="Base_Column_List" />  from sys_user  where user_id = #{userId}
   </select>
-  <delete id="deleteByUserId" parameterType="java.lang.String" >
+  <delete id="deleteByUserId" parameterType="java.lang.String" >t
     delete from sys_user where user_id = #{userId}
   </delete>
   <insert id="insertUser" parameterType="com.chunjies.office.data.entity.User" >

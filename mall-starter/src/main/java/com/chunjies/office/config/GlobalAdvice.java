@@ -2,6 +2,8 @@ package com.chunjies.office.config;
 
 import com.chunjies.office.core.base.Result;
 import com.chunjies.office.core.exception.BizException;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.NestedRuntimeException;
@@ -11,8 +13,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
 
 /**
@@ -56,7 +56,7 @@ public class GlobalAdvice {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        e.getBindingResult().getAllErrors().forEach(c->{
+        e.getBindingResult().getAllErrors().forEach(c -> {
             logger.error("handleMethodArgumentNotValidException 异常信息:{}", c.getDefaultMessage());
         });
         return Result.error(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());

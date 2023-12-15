@@ -2,20 +2,24 @@ package com.chunjies.office.controller;
 
 import com.chunjies.office.core.base.IController;
 import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.cache.RedisCache;
 import com.chunjies.office.core.utils.JwtUtils;
 import com.chunjies.office.domain.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import org.checkerframework.checker.units.qual.A;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.io.IOException;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /**
  * {@code @author} chunjie
@@ -24,21 +28,24 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping("/auth")
-@Api(tags = "登录接口")
+@Tag(name = "登录接口")
 public class LoginController extends IController {
 
+    private RedisCache redisCache;
+
     @PostMapping("/login")
-    @ApiOperation("用户登录")
-    public Result<String> login(@Validated @RequestBody LoginDto loginForm, @ApiIgnore HttpSession session, @ApiIgnore HttpServletResponse response) {
+    @Operation(summary = "用户登录")
+    public Result<String> login(@Parameter(name = "loginForm",description ="登录对象") @Validated @RequestBody LoginDto loginForm, HttpSession session, HttpServletResponse response) {
         String token = JwtUtils.auth("admin", "");
+        String key= UUID.randomUUID().toString();
         response.addHeader("token", token);
-        session.setAttribute("user", "admin");
-        return Result.ok("成功", token);
+        redisCache.setCacheObject(key,token,1800, TimeUnit.SECONDS);
+        return Result.ok("成功", key);
     }
 
     @GetMapping("/captcha")
-    @ApiOperation("验证码")
-    public void captcha(@ApiIgnore HttpSession session, @ApiIgnore HttpServletResponse response) throws IOException {
+    @Operation(summary = "验证码")
+    public void captcha(HttpSession session, HttpServletResponse response) throws IOException {
         GifCaptcha gifCaptcha = new GifCaptcha(100, 48, 4);
         // 设置类型：字母数字混合
         gifCaptcha.setCharType(Captcha.TYPE_DEFAULT);
@@ -51,9 +58,15 @@ public class LoginController extends IController {
 
 
     @GetMapping("/logOut")
-    @ApiOperation("用户退出")
+    @Operation(summary = "用户退出")
     public Result<String> logOut() {
 
         return Result.error();
+    }
+
+
+    @Autowired
+    public void setRedisCache(RedisCache redisCache) {
+        this.redisCache = redisCache;
     }
 }

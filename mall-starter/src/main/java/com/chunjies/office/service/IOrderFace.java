@@ -9,5 +9,5 @@ import com.chunjies.office.core.base.Result;
  */
 public interface IOrderFace {
 
-    Result createOrder();
+    Result<?> createOrder();
 }

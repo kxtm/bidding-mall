@@ -4,12 +4,13 @@ import com.chunjies.office.core.base.Result;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;
-import com.chunjies.ofiice.cache.RedisCache;
+import com.chunjies.office.core.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.plugin.core.Plugin;
 
-import javax.annotation.Resource;
+
 
 /**
  * {@code @author} chunjie
@@ -93,7 +94,7 @@ public abstract class IMarketPlugin implements Plugin<MarketParam> {
         this.param = param;
     }
 
-    @Resource
+    @Autowired
     public void setRedisService(RedisCache redisCache) {
         this.redisCache = redisCache;
     }

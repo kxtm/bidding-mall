@@ -2,16 +2,16 @@ package com.chunjies.office.config;
 
 
 import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.cache.RedisCache;
 import com.chunjies.office.core.utils.JsonUtil;
-import com.chunjies.office.core.utils.JwtUtils;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * {@code @author} chunjie
@@ -21,20 +21,20 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthConfig implements HandlerInterceptor {
 
     final Logger logger = LoggerFactory.getLogger(AuthConfig.class);
+    private RedisCache redisCache;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, @NonNull HttpServletResponse resp,@NonNull Object handler) throws Exception {
+    public boolean preHandle(HttpServletRequest request, @NonNull HttpServletResponse resp, @NonNull Object handler) throws Exception {
         logger.error("请求地址{}", request.getRequestURI());
         String token = request.getHeader("token");
-        String user = (String) request.getSession().getAttribute("user");
-        if (ObjectUtils.isEmpty(token) || ObjectUtils.isEmpty(user)) {
+        if (ObjectUtils.isEmpty(token)) {
             resp.setCharacterEncoding("UTF-8");
             resp.setContentType("application/json; charset=utf-8");
             resp.getWriter().println(JsonUtil.objectToJson(Result.error("无权限访问")));
             resp.getWriter().close();
             return false;
         }
-        if (!ObjectUtils.isEmpty(token) && !JwtUtils.verify(token, user)) {
+        if (!ObjectUtils.isEmpty(token) && ObjectUtils.isEmpty(redisCache.getCacheObject(token))) {
             resp.setCharacterEncoding("UTF-8");
             resp.setContentType("application/json; charset=utf-8");
             resp.getWriter().println(JsonUtil.objectToJson(Result.error("授权已过期")));
@@ -42,5 +42,10 @@ public class AuthConfig implements HandlerInterceptor {
             return false;
         }
         return true;
+    }
+
+    @Autowired
+    public void setRedisCache(RedisCache redisCache) {
+        this.redisCache = redisCache;
     }
 }

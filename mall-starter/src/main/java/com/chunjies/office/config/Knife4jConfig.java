@@ -1,14 +1,10 @@
 package com.chunjies.office.config;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.PathSelectors;
-import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.spi.DocumentationType;
-import springfox.documentation.spring.web.plugins.Docket;
 
 /**
  * {@code @author} chunjie
@@ -19,16 +15,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class Knife4jConfig {
 
     @Bean
-    public Docket docket() {
-        return new Docket(DocumentationType.OAS_30)
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                .paths(PathSelectors.any())//匹配所有路径
-                .build();
-    }
+    public OpenAPI docket() {
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("office-mall接口文档").description("商城接口文档").build();
+        return new OpenAPI().info(new Info().title("office-mall接口文档").description("office-mall接口文档").version("1.0").contact(new Contact().name("春杰科技").email("sale@chunjie.shop")));
+
     }
 }

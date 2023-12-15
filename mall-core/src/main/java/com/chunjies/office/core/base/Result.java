@@ -1,8 +1,8 @@
 package com.chunjies.office.core.base;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.SchemaProperty;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -13,19 +13,19 @@ import java.util.UUID;
  * {@code @author:} chunjie
  * {@code @date: }2023-09-15 22:26
  **/
-@ApiModel("结果模型")
+@Schema(name = "结果模型")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result<T> implements Serializable {
 
-    @ApiModelProperty("链路ID")
+    @SchemaProperty(name = "链路ID")
     private String traceId;
-    @ApiModelProperty(value = "错误码 1 成功,0失败")
+    @SchemaProperty(name = "错误码 1 成功,0失败")
     private int code;
-    @ApiModelProperty(value = "错误信息")
+    @SchemaProperty(name = "错误信息")
     private String msg;
-    @ApiModelProperty(value = "返回数据")
+    @SchemaProperty(name = "返回数据")
     private T data;
-    @ApiModelProperty("请求时间")
+    @SchemaProperty(name = "请求时间")
     private Date timeStamp;
 
     public Result() {

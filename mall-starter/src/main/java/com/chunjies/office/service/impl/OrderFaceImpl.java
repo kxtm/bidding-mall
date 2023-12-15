@@ -1,11 +1,11 @@
 package com.chunjies.office.service.impl;
 
-import com.chunjies.office.core.enums.MarketType;
 import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.cache.RedisCache;
+import com.chunjies.office.core.enums.MarketType;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
 import com.chunjies.office.service.IOrderFace;
-import com.chunjies.ofiice.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,13 +30,12 @@ public class OrderFaceImpl implements IOrderFace {
     private RedisCache redisCache;
 
     @Override
-    public Result createOrder() {
+    public Result<?> createOrder() {
         log.error("请求来了");
         Assert.notNull(redisCache, "不能为空");
         redisCache.setCacheObject("Test", "1111", 1000, TimeUnit.SECONDS);
         IMarketPlugin plugin = registry.getPluginFor(new MarketParam(MarketType.SYS.getType())).get();
-        Result t = plugin.createOrder(null);
-        return t;
+        return plugin.createOrder(null);
     }
 
     @Autowired

@@ -2,8 +2,8 @@ package com.chunjies.office.controller;
 
 import com.chunjies.office.core.base.IController;
 import com.chunjies.office.core.base.Result;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,35 +17,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/role")
-@Api(tags = "角色接口")
+@Tag(name = "角色接口")
 public class RoleController extends IController {
     @GetMapping("/list")
-    @ApiOperation("角色列表")
+    @Operation(summary = "角色列表")
     public Result<String> roleList() {
 
         return Result.error();
     }
 
     @PostMapping("/save")
-    @ApiOperation("保存角色")
+    @Operation(summary = "保存角色")
     public Result<String> addRole() {
         return Result.error();
     }
 
     @GetMapping("/detail")
-    @ApiOperation("角色详情")
+    @Operation(summary = "角色详情")
     public Result<String> roleDetail() {
         return Result.error();
     }
 
     @PostMapping("/delete")
-    @ApiOperation("删除角色")
+    @Operation(summary = "删除角色")
     public Result<String> deleteRole() {
         return Result.error();
     }
 
     @PostMapping("/saveCategory")
-    @ApiOperation("保存角色分类")
+    @Operation(summary = "保存角色分类")
     public Result<String> saveRoleCategory() {
         return Result.error();
     }

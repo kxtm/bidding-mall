@@ -1,4 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.chunjies.ofiice.redis.RedisConfig,\
-  com.chunjies.ofiice.cache.RedisCache
-

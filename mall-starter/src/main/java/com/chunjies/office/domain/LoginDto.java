@@ -1,22 +1,22 @@
 package com.chunjies.office.domain;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.SchemaProperty;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
-@ApiModel("登录对象")
+@Schema(name = "登录对象")
 public class LoginDto implements Serializable {
 
-    @ApiModelProperty(value = "用户名:数字或字母", required = true)
-    @Pattern(regexp = "^[A-Za-z0-9]+$",  message = "用户名或密码错误")
+    @SchemaProperty(name = "用户名:数字或字母")
+    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "用户名或密码错误")
     private String userName;
-    @ApiModelProperty(value = "用户密码", required = true)
+    @SchemaProperty(name = "用户密码")
     @NotBlank(message = "用户名或密码错误")
     private String passwd;
-    @ApiModelProperty(value = "验证码", required = true)
+    @SchemaProperty(name = "验证码")
     @NotBlank(message = "验证码错误")
     private String code;
 

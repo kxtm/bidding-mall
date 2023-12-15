@@ -1,5 +1,6 @@
 package com.chunjies.office.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -15,10 +16,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
+    @Bean
+    public AuthConfig authConfig() {
+        return new AuthConfig();
+    }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowCredentials(true).allowedOriginPatterns("*").allowedHeaders("*").allowedMethods("GET","POST");
+        registry.addMapping("/**").allowCredentials(true).allowedOriginPatterns("*").allowedHeaders("*").allowedMethods("GET", "POST");
         WebMvcConfigurer.super.addCorsMappings(registry);
     }
 
@@ -30,9 +35,10 @@ public class WebConfig implements WebMvcConfigurer {
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AuthConfig()).addPathPatterns("/**").excludePathPatterns("/doc.html", "/favicon.ico", "/webjars/**","/swagger-resources","/v3/api-docs","/auth/login","/auth/captcha");
+        registry.addInterceptor(authConfig()).addPathPatterns("/**").excludePathPatterns("/doc.html", "/favicon.ico", "/webjars/**", "/swagger-resources/**", "/v3/**", "/auth/login", "/auth/captcha");
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 }

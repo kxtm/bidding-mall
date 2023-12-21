@@ -6,4 +6,15 @@ package com.chunjies.office.core.consts;
  * {@code @description}
  */
 public class Consts {
+
+    //短信计数KEY前缀
+    public final static String SEND_SMS_PREFIX="SP";
+    //邮件技术KEY
+    public final static String SEND_EMAIL_PREFIX="MP";
+    //短信验证码KEY
+    //邮件验证码KEY
+    //普通验证码KEY
+    //访问量计数KEY
+    //
+
 }

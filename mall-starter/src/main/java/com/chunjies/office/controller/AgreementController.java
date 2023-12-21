@@ -2,7 +2,7 @@ package com.chunjies.office.controller;
 
 import com.chunjies.office.core.base.IController;
 import com.chunjies.office.core.base.Result;
-import com.chunjies.office.domain.AgreementCategoryDto;
+import com.chunjies.office.domain.AgreeCateDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.annotation.Validated;
@@ -44,7 +44,7 @@ public class AgreementController extends IController {
 
     @PostMapping("/saveCategory")
     @Operation(summary = "保存协议分类")
-    public Result<String> saveAgreeCategory(@Validated @RequestBody AgreementCategoryDto agreementCategoryDto) {
+    public Result<String> saveAgreeCategory(@Validated @RequestBody AgreeCateDto agreeCateDto) {
 
         return Result.error();
     }

@@ -3,10 +3,11 @@ package com.chunjies.office.core.base;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.SchemaProperty;
+import lombok.Data;
+import lombok.Getter;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
@@ -15,18 +16,21 @@ import java.util.UUID;
  **/
 @Schema(name = "结果模型")
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
 public class Result<T> implements Serializable {
 
     @SchemaProperty(name = "链路ID")
-    private String traceId;
+    private String traceId = UUID.randomUUID().toString();
     @SchemaProperty(name = "错误码 1 成功,0失败")
     private int code;
     @SchemaProperty(name = "错误信息")
+    @Getter
     private String msg;
     @SchemaProperty(name = "返回数据")
+    @Getter
     private T data;
     @SchemaProperty(name = "请求时间")
-    private Date timeStamp;
+    private LocalDateTime timeStamp =LocalDateTime.now();
 
     public Result() {
     }
@@ -73,47 +77,6 @@ public class Result<T> implements Serializable {
 
     public static <T> Result<T> error(int code, String msg, T data) {
         return new Result<>(code, msg, data);
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-
-    public String getTraceId() {
-        return (traceId == null ? UUID.randomUUID().toString() : traceId);
-    }
-
-    public void setTraceId(String traceId) {
-        this.traceId = traceId;
-    }
-
-    public Date getTimeStamp() {
-        return (timeStamp == null ? Calendar.getInstance().getTime() : timeStamp);
-    }
-
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
     }
 
     final static int DEFAULT_SUCCESS_CODE = 1;

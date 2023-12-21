@@ -39,7 +39,7 @@ public class JsonUtil {
         try {
             return objectMapper.writeValueAsString(data);
         } catch (Exception e) {
-            logger.error("转换JSON异常{}", e);
+            logger.error("转换JSON异常", e);
         }
         return null;
     }
@@ -55,7 +55,7 @@ public class JsonUtil {
         try {
             return objectMapper.readValue(jsonData, beanType);
         } catch (Exception e) {
-            logger.error("转换对象异常{}", e);
+            logger.error("转换对象异常", e);
         }
         return null;
     }

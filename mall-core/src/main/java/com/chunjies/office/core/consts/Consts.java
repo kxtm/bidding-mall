@@ -15,6 +15,13 @@ public class Consts {
     //邮件验证码KEY
     //普通验证码KEY
     //访问量计数KEY
-    //
+    //需求编号前缀 
+    private final static String REQUIRE_PREFIX="R";
+    //订单编号前缀
+    private final static String ORDER_PREFIX="ED";
+    //开票申请编号前缀
+    private final static String FP_PREFIX="FP";
+    //报销申请编号前缀
+    private final static String BX_PREFIX="BX";
 
 }

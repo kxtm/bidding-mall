@@ -4,8 +4,8 @@ import com.chunjies.office.core.base.IEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 public class UserOrg extends IEntity {
 
     private String userId;
@@ -19,6 +19,5 @@ public class UserOrg extends IEntity {
     private String orgSeq;
 
     private String orgSeqCn;
-
 
 }

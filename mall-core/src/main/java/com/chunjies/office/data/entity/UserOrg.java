@@ -1,11 +1,7 @@
 package com.chunjies.office.data.entity;
 
 import com.chunjies.office.core.base.IEntity;
-import lombok.Getter;
-import lombok.Setter;
 
-@Setter
-@Getter
 public class UserOrg extends IEntity {
 
     private String userId;
@@ -20,4 +16,51 @@ public class UserOrg extends IEntity {
 
     private String orgSeqCn;
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(String orgId) {
+        this.orgId = orgId;
+    }
+
+    public Integer getOrgDefault() {
+        return orgDefault;
+    }
+
+    public void setOrgDefault(Integer orgDefault) {
+        this.orgDefault = orgDefault;
+    }
+
+    public Integer getSortNum() {
+        return sortNum;
+    }
+
+    public void setSortNum(Integer sortNum) {
+        this.sortNum = sortNum;
+    }
+
+    public String getOrgSeq() {
+        return orgSeq;
+    }
+
+    public void setOrgSeq(String orgSeq) {
+        this.orgSeq = orgSeq;
+    }
+
+    public String getOrgSeqCn() {
+        return orgSeqCn;
+    }
+
+    public void setOrgSeqCn(String orgSeqCn) {
+        this.orgSeqCn = orgSeqCn;
+    }
 }

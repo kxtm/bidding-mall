@@ -110,7 +110,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateUserOrg" parameterType="cn.sx.ebj.eblog.core.data.entity.UserOrg" >
+  <update id="updateUserOrg" parameterType="com.chunjies.office.data.entity.UserOrg" >
     update sys_user_org
     <set >
       <if test="userId != null" >

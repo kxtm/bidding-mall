@@ -36,13 +36,13 @@ public class InvoiceController extends IController {
     }
 
     @PostMapping("/delete")
-    @Operation(summary ="删除发票")
+    @Operation(summary ="删除发票明细")
     public Result<String> deleteInvoiceInfo() {
         return Result.error();
     }
 
     @GetMapping("/applyList")
-    @Operation(summary ="开票申请列表")
+    @Operation(summary ="发票申请列表")
     public Result<?> getInvoiceApplyList() {
 
         return Result.error();
@@ -66,4 +66,9 @@ public class InvoiceController extends IController {
         return Result.error();
     }
 
+    @PostMapping("/downInvoice")
+    @Operation(summary = "发票下载")
+    public Result<String> getInvoiceUrl(){
+        return  Result.error();
+    }
 }

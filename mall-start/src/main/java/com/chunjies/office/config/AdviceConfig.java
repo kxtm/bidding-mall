@@ -21,8 +21,8 @@ import java.util.Objects;
  **/
 
 @RestControllerAdvice
-public class GlobalAdvice {
-    final Logger logger = LoggerFactory.getLogger(GlobalAdvice.class);
+public class AdviceConfig {
+    final Logger logger = LoggerFactory.getLogger(AdviceConfig.class);
 
     @ExceptionHandler(Exception.class)
     public Result<String> handleException(Exception e, HttpServletRequest req) {

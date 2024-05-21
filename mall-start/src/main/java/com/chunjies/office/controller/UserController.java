@@ -2,72 +2,75 @@ package com.chunjies.office.controller;
 
 import com.chunjies.office.core.core.IController;
 import com.chunjies.office.core.core.Result;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 用户接口
  * {@code @author} chunjie
  * {@code @time} 2023/9/15
  * {@code @description}
  */
 
 @RestController
-@Tag(name = "用户接口")
 @RequestMapping("/user")
 public class UserController extends IController {
 
 
+    //用户列表
     @GetMapping("/list")
-    @Operation(summary = "用户列表")
     public Result<String> userList() {
         return Result.error();
     }
 
+    //保存用户
     @PostMapping("/save")
-    @Operation(summary = "保存用户")
     public Result<String> saveUser() {
         return Result.error();
     }
 
+
+    //用户详情
     @GetMapping("/query")
-    @Operation(summary = "用户详情")
     public Result<String> userDetail() {
         return Result.error();
     }
 
 
+    //删除用户
     @PostMapping("/delete")
-    @Operation(summary = "删除用户")
     public Result<String> deleteUser() {
         return Result.error();
     }
 
 
+    //查询用户部门
     @PostMapping("/queryDept")
-    @Operation(summary = "查询用户部门")
     public Result<String> queryUserDept() {
         return Result.error();
     }
 
+    //保存用户部门
     @PostMapping("/saveDept")
-    @Operation(summary = "保存用户部门")
     public Result<String> saveUserDept() {
         return Result.error();
     }
 
 
+    /**
+     * 保存用户角色
+     */
     @PostMapping("/queryRole")
-    @Operation(summary = "保存用户角色")
     public Result<String> queryUserRole() {
         return Result.error();
     }
 
+    /**
+     * 保存用户角色
+     */
     @PostMapping("/saveRole")
-    @Operation(summary = "保存用户角色")
     public Result<String> saveUserRole() {
         return Result.error();
     }

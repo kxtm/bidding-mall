@@ -2,39 +2,39 @@ package com.chunjies.office.controller;
 
 import com.chunjies.office.core.core.IController;
 import com.chunjies.office.core.core.Result;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+//商品接口
 @RestController
 @RequestMapping("/prod")
-@Tag(name = "商品接口")
 public class ProductController extends IController {
 
+
+    //商品列表
     @GetMapping("/list")
-    @Operation(summary = "商品列表")
     public Result<String> ProductList() {
 
         return Result.error();
     }
 
+    //保存商品
     @PostMapping("/save")
-    @Operation(summary = "保存商品")
     public Result<String> addProduct() {
         return Result.error();
     }
 
+    //商品详情
     @GetMapping("/detail")
-    @Operation(summary = "商品详情")
     public Result<String> productDetail() {
         return Result.error();
     }
 
+    //删除商品
     @PostMapping("/delete")
-    @Operation(summary = "删除商品")
     public Result<String> deleteProduct() {
         return Result.error();
     }

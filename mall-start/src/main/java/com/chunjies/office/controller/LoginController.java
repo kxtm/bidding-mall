@@ -3,14 +3,13 @@ package com.chunjies.office.controller;
 import com.chunjies.office.core.cache.RedisCache;
 import com.chunjies.office.core.core.IController;
 import com.chunjies.office.core.core.Result;
-import com.chunjies.office.core.utils.JwtUtils;
 import com.chunjies.office.domain.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -31,12 +30,10 @@ public class LoginController extends IController {
 
     //用户登录
     @PostMapping("/login")
-    @Validated
-    public Result<String> login(@RequestBody LoginDto loginForm, HttpServletResponse response) {
-        String token = JwtUtils.auth(loginForm.getUserName(), "");
+
+    public Result<String> login(@Valid @RequestBody LoginDto loginDto) {
         String key = UUID.randomUUID().toString();
-        response.addHeader("token", token);
-        redisCache.setCacheObject(key, token, 1800, TimeUnit.SECONDS);
+        redisCache.setCacheObject(key, "A", 1800, TimeUnit.SECONDS);
         return Result.ok("成功", key);
     }
 

@@ -1,31 +1,32 @@
 package com.chunjies.office.domain;
 
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.media.SchemaProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
 import java.io.Serializable;
 
-@Schema(name = "登录对象")
+//登录对象
 public class LoginDto implements Serializable {
 
-    @SchemaProperty(name = "用户名:数字或字母")
-    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "用户名或密码错误")
-    private String userName;
-    @SchemaProperty(name = "用户密码")
-    @NotBlank(message = "用户名或密码错误")
+    //用户名:数字或字母
+    @NotBlank(message = "用户名不能为空")
+    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "用户名不符合规则")
+    private String name;
+    //用户密码
+    @NotBlank(message = "密码不能为空")
+    @Pattern(regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[$@$!%*?&]).{8,}$", message = "密码必须包含大小写字母、数字、特殊字符")
     private String passwd;
-    @SchemaProperty(name = "验证码")
+    //验证码
     @NotBlank(message = "验证码错误")
-    private String code;
+    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "验证码不符合规则")
+    private String captcha;
 
-    public String getUserName() {
-        return userName;
+    public String getName() {
+        return name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPasswd() {
@@ -36,11 +37,11 @@ public class LoginDto implements Serializable {
         this.passwd = passwd;
     }
 
-    public String getCode() {
-        return code;
+    public String getCaptcha() {
+        return captcha;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setCaptcha(String captcha) {
+        this.captcha = captcha;
     }
 }

@@ -5,7 +5,7 @@ package com.chunjies.office.core.consts;
  * {@code @time} 2023/9/15
  * {@code @description}
  */
-public class Consts {
+public class Constr {
     //短信计数KEY前缀
     public final static String SMS_PREFIX="SP";
     //邮件技术KEY

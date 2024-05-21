@@ -1,29 +1,27 @@
 package com.chunjies.office.core.core;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.media.SchemaProperty;
 
 import java.io.Serializable;
 import java.util.UUID;
 
 /**
+ * 结果模型
  * {@code @author:} chunjie
  * {@code @date: }2023-09-15 22:26
  **/
-@Schema(name = "结果模型")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result<T> implements Serializable {
 
-    @SchemaProperty(name = "链路ID")
-    private String traceId = UUID.randomUUID().toString();
-    @SchemaProperty(name = "错误码 1 成功,0失败")
+    //链路ID
+    private String traceId = UUID.randomUUID().toString().toUpperCase();
+    //错误码 1 成功,0失败
     private int code;
-    @SchemaProperty(name = "错误信息")
+    //错误信息
     private String msg;
-    @SchemaProperty(name = "返回数据")
+    //返回数据
     private T data;
-    @SchemaProperty(name = "请求时间")
+    //请求时间
     private Long timeStamp = System.currentTimeMillis();
 
     public Result() {

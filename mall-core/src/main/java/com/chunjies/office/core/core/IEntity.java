@@ -1,4 +1,4 @@
-package com.chunjies.office.core.base;
+package com.chunjies.office.core.core;
 
 import java.util.Date;
 

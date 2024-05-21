@@ -1,6 +1,6 @@
 package com.chunjies.office.plugins.plugin;
 
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.Result;
 import com.chunjies.office.core.enums.MarketType;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;

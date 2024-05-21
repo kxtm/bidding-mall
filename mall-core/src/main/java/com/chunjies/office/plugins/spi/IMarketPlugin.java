@@ -1,6 +1,6 @@
 package com.chunjies.office.plugins.spi;
 
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.Result;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;

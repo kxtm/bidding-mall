@@ -1,7 +1,7 @@
 package com.chunjies.office.controller;
 
-import com.chunjies.office.core.base.IController;
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.IController;
+import com.chunjies.office.core.core.Result;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;

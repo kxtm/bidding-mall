@@ -1,5 +1,8 @@
 package com.chunjies.office.config;
 
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import org.hibernate.validator.HibernateValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -40,5 +43,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authConfig()).addPathPatterns("/**").excludePathPatterns("/doc.html", "/favicon.ico", "/webjars/**", "/swagger-resources/**", "/v3/**", "/auth/login", "/auth/captcha");
         WebMvcConfigurer.super.addInterceptors(registry);
+    }
+
+    @Bean
+    public Validator validator() {
+        return Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory().getValidator();
     }
 }

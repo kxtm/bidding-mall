@@ -1,6 +1,6 @@
 package com.chunjies.office.service;
 
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.Result;
 
 /**
  * {@code @author} chunjie

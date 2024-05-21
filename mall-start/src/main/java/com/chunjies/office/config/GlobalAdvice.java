@@ -1,6 +1,6 @@
 package com.chunjies.office.config;
 
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.Result;
 import com.chunjies.office.core.exception.BizException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

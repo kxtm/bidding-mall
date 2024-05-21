@@ -1,7 +1,7 @@
 package com.chunjies.office.config;
 
 
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.Result;
 import com.chunjies.office.core.cache.RedisCache;
 import com.chunjies.office.core.utils.JsonUtil;
 import jakarta.servlet.http.HttpServletRequest;

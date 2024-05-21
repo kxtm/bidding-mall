@@ -1,7 +1,7 @@
 package com.chunjies.office.controller;
 
-import com.chunjies.office.core.base.IController;
-import com.chunjies.office.core.base.Result;
+import com.chunjies.office.core.core.IController;
+import com.chunjies.office.core.core.Result;
 import com.chunjies.office.core.cache.RedisCache;
 import com.chunjies.office.core.utils.JwtUtils;
 import com.chunjies.office.domain.LoginDto;
@@ -12,7 +12,6 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

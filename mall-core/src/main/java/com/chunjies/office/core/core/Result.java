@@ -1,11 +1,10 @@
-package com.chunjies.office.core.base;
+package com.chunjies.office.core.core;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.SchemaProperty;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 /**
@@ -25,7 +24,7 @@ public class Result<T> implements Serializable {
     @SchemaProperty(name = "返回数据")
     private T data;
     @SchemaProperty(name = "请求时间")
-    private LocalDateTime timeStamp =LocalDateTime.now();
+    private Long timeStamp = System.currentTimeMillis();
 
     public Result() {
     }
@@ -106,11 +105,11 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
-    public LocalDateTime getTimeStamp() {
+    public Long getTimeStamp() {
         return timeStamp;
     }
 
-    public void setTimeStamp(LocalDateTime timeStamp) {
+    public void setTimeStamp(Long timeStamp) {
         this.timeStamp = timeStamp;
     }
 

@@ -1,7 +1,5 @@
 package com.chunjies.office.config;
 
-import javax.validation.Validation;
-import javax.validation.Validator;
 import org.hibernate.validator.HibernateValidator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 
 /**
  * {@code @author} chunjie
@@ -32,21 +34,24 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/static/");
-        registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
         WebMvcConfigurer.super.addResourceHandlers(registry);
     }
 
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(authConfig()).addPathPatterns("/**").excludePathPatterns("/doc.html", "/favicon.ico", "/webjars/**", "/swagger-resources/**", "/v3/**", "/auth/login", "/auth/captcha");
+        registry.addInterceptor(authConfig()).addPathPatterns("/**").excludePathPatterns("/auth/login", "/auth/captcha");
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 
+
     @Bean
-    public Validator validator() {
-        return Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory().getValidator();
+    ValidatorFactory validatorFactory() {
+        return Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory();
+    }
+
+    @Bean
+    public Validator validator(ValidatorFactory validatorFactory) {
+        return validatorFactory.getValidator();
     }
 }

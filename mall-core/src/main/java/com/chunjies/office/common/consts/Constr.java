@@ -7,24 +7,24 @@ package com.chunjies.office.common.consts;
  */
 public class Constr {
     //短信计数KEY前缀
-    public final static String SMS_PREFIX="SP";
+    public static final String SMS_PREFIX = "SP";
     //邮件技术KEY
-    public final static String EMAIL_PREFIX="MP";
+    public static final String EMAIL_PREFIX = "MP";
     //短信验证码KEY
-    public final static String SMS_CODE_PREFIX="SCP";
+    public static final String SMS_CODE_PREFIX = "SCP";
     //邮件验证码KEY
-    public final static String EMAIL_CODE_PREFIX="ECP";
+    public static final String EMAIL_CODE_PREFIX = "ECP";
     //图片验证码KEY
-    public final static String CAPTCHA_PREFIX="CP";
+    public static final String CAPTCHA_PREFIX = "CP";
     //访问量计数KEY
-    public final static String VISITS_PREFIX="VP";
+    public static final String VISITS_PREFIX = "VP";
     //需求编号前缀 
-    private final static String REQUIRE_PREFIX="R";
+    public static final String REQUIRE_PREFIX = "R";
     //订单编号前缀
-    private final static String ORDER_PREFIX="ED";
+    public static final String ORDER_PREFIX = "ED";
     //开票申请编号前缀
-    private final static String FP_PREFIX="FP";
+    public static final String FP_PREFIX = "FP";
     //报销申请编号前缀
-    private final static String BX_PREFIX="BX";
+    public static final String BX_PREFIX = "BX";
 
 }

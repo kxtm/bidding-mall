@@ -1,4 +1,4 @@
-package com.chunjies.office.core.annotation;
+package com.chunjies.office.common.annotation;
 
 import java.lang.annotation.*;
 

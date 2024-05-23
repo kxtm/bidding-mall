@@ -1,11 +1,11 @@
 package com.chunjies.office.config;
 
 
-import com.chunjies.office.core.core.Result;
-import com.chunjies.office.core.cache.RedisCache;
-import com.chunjies.office.core.utils.JsonUtil;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import com.chunjies.office.common.core.Result;
+import com.chunjies.office.common.cache.RedisCache;
+import com.chunjies.office.common.utils.JsonUtil;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

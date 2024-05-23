@@ -1,7 +1,7 @@
 package com.chunjies.office.controller;
 
-import com.chunjies.office.core.core.IController;
-import com.chunjies.office.core.core.Result;
+import com.chunjies.office.common.core.IController;
+import com.chunjies.office.common.core.Result;
 import com.chunjies.office.domain.AgreeCateDto;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

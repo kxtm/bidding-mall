@@ -1,9 +1,9 @@
 package com.chunjies.office.config;
 
-import com.chunjies.office.core.core.Result;
-import com.chunjies.office.core.exception.BizException;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
+import com.chunjies.office.common.core.Result;
+import com.chunjies.office.common.exception.BizException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.NestedRuntimeException;

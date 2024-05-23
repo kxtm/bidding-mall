@@ -1,4 +1,4 @@
-package com.chunjies.office.core.configure;
+package com.chunjies.office.common.configure;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -30,7 +30,8 @@ public class RedisConfig {
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         objectMapper.setDefaultTyping(ObjectMapper.DefaultTypeResolverBuilder.noTypeInfoBuilder());
         StringRedisSerializer strSerializer = new StringRedisSerializer();
-        var serializer = new Jackson2JsonRedisSerializer<>(objectMapper, Object.class);
+        Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
+        serializer.setObjectMapper(objectMapper);
         // key采用String的序列化方式
         template.setKeySerializer(strSerializer);
         // hash的key也采用String的序列化方式

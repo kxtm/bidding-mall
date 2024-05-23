@@ -1,4 +1,4 @@
-package com.chunjies.office.core.enums;
+package com.chunjies.office.common.enums;
 
 
 /**

@@ -1,10 +1,10 @@
 package com.chunjies.office.plugins.spi;
 
-import com.chunjies.office.core.core.Result;
+import com.chunjies.office.common.core.Result;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.model.OrderRequest;
 import com.chunjies.office.plugins.model.OrderResponse;
-import com.chunjies.office.core.cache.RedisCache;
+import com.chunjies.office.common.cache.RedisCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,17 +1,17 @@
 package com.chunjies.office.controller;
 
-import com.chunjies.office.core.cache.RedisCache;
-import com.chunjies.office.core.core.IController;
-import com.chunjies.office.core.core.Result;
+import com.chunjies.office.common.cache.RedisCache;
+import com.chunjies.office.common.core.IController;
+import com.chunjies.office.common.core.Result;
 import com.chunjies.office.domain.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.io.IOException;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;

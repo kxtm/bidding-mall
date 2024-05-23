@@ -1,8 +1,8 @@
 package com.chunjies.office.service.impl;
 
-import com.chunjies.office.core.core.Result;
-import com.chunjies.office.core.cache.RedisCache;
-import com.chunjies.office.core.enums.MarketType;
+import com.chunjies.office.common.core.Result;
+import com.chunjies.office.common.cache.RedisCache;
+import com.chunjies.office.common.enums.MarketType;
 import com.chunjies.office.plugins.model.MarketParam;
 import com.chunjies.office.plugins.spi.IMarketPlugin;
 import com.chunjies.office.service.IOrderFace;

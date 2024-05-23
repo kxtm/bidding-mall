@@ -1,4 +1,4 @@
-package com.chunjies.office.core.utils;
+package com.chunjies.office.common.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;

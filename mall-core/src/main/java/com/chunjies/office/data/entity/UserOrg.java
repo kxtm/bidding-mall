@@ -1,6 +1,6 @@
 package com.chunjies.office.data.entity;
 
-import com.chunjies.office.core.core.IEntity;
+import com.chunjies.office.common.core.IEntity;
 
 public class UserOrg extends IEntity {
 

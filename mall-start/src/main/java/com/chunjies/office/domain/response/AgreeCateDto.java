@@ -1,4 +1,4 @@
-package com.chunjies.office.domain;
+package com.chunjies.office.domain.response;
 
 
 import javax.validation.constraints.NotBlank;

@@ -42,14 +42,8 @@ public class Result<T> implements Serializable {
         return new Result<>(DEFAULT_SUCCESS_CODE, msg, data);
     }
 
-
-    public static <T> Result<T> ok(String msg) {
-        return new Result<>(DEFAULT_SUCCESS_CODE, msg, null);
-    }
-
-
-    public static <T> Result<T> ok(int code, String msg, T data) {
-        return new Result<>(code, msg, data);
+    public static <T> Result<T> ok(T data) {
+        return new Result<>(DEFAULT_SUCCESS_CODE, DEFAULT_OK_MSG, data);
     }
 
     public static <T> Result<T> error() {
@@ -66,10 +60,6 @@ public class Result<T> implements Serializable {
         return new Result<>(DEFAULT_ERROR_CODE, msg, null);
     }
 
-
-    public static <T> Result<T> error(int code, String msg, T data) {
-        return new Result<>(code, msg, data);
-    }
 
     public String getTraceId() {
         return traceId;

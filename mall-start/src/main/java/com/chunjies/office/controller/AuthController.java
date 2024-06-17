@@ -6,12 +6,10 @@ import com.chunjies.office.common.core.Result;
 import com.chunjies.office.domain.request.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
-import com.wf.captcha.utils.CaptchaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.UUID;
@@ -40,11 +38,12 @@ public class AuthController extends IController {
 
     //验证码
     @GetMapping("/captcha")
-    public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public Result<String> captcha(HttpServletRequest request) throws IOException {
         GifCaptcha gifCaptcha = new GifCaptcha(100, 48, 4);
         // 设置类型：字母数字混合
         gifCaptcha.setCharType(Captcha.TYPE_DEFAULT);
-        CaptchaUtil.out(gifCaptcha,request,response);
+        request.getSession().setAttribute("captcha", gifCaptcha.text());
+        return Result.ok(gifCaptcha.toBase64());
     }
 
 

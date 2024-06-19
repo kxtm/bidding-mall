@@ -1,17 +1,16 @@
 package com.chunjies.office.controller;
 
 import com.chunjies.office.common.cache.RedisCache;
+import com.chunjies.office.common.consts.Constr;
 import com.chunjies.office.common.core.IController;
 import com.chunjies.office.common.core.Result;
 import com.chunjies.office.domain.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
-import com.wf.captcha.utils.CaptchaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.UUID;
@@ -35,16 +34,17 @@ public class AuthController extends IController {
     public Result<String> login(@Valid @RequestBody LoginDto loginDto) {
         String key = UUID.randomUUID().toString();
         redisCache.setCacheObject(key, "A", 1800, TimeUnit.SECONDS);
-        return Result.ok("成功", key);
+        return Result.ok(key);
     }
 
     //验证码
     @GetMapping("/captcha")
-    public void captcha(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public Result<String> captcha(HttpSession session) throws IOException {
         GifCaptcha gifCaptcha = new GifCaptcha(100, 48, 4);
         // 设置类型：字母数字混合
         gifCaptcha.setCharType(Captcha.TYPE_DEFAULT);
-        CaptchaUtil.out(gifCaptcha,request,response);
+        session.setAttribute(Constr.CAPTCHA, gifCaptcha);
+        return Result.ok(gifCaptcha.toBase64());
     }
 
 

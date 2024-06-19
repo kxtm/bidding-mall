@@ -27,4 +27,5 @@ public class Constr {
     //报销申请编号前缀
     public static final String BX_PREFIX = "BX";
 
+    public static final String CAPTCHA="captcha";
 }

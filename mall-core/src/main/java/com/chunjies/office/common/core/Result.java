@@ -38,18 +38,8 @@ public class Result<T> implements Serializable {
         return new Result<>(DEFAULT_SUCCESS_CODE, DEFAULT_OK_MSG, null);
     }
 
-    public static <T> Result<T> ok(String msg, T data) {
-        return new Result<>(DEFAULT_SUCCESS_CODE, msg, data);
-    }
-
-
-    public static <T> Result<T> ok(String msg) {
-        return new Result<>(DEFAULT_SUCCESS_CODE, msg, null);
-    }
-
-
-    public static <T> Result<T> ok(int code, String msg, T data) {
-        return new Result<>(code, msg, data);
+    public static <T> Result<T> ok(T data) {
+        return new Result<>(DEFAULT_SUCCESS_CODE, DEFAULT_OK_MSG, data);
     }
 
     public static <T> Result<T> error() {
@@ -57,20 +47,10 @@ public class Result<T> implements Serializable {
     }
 
 
-    public static <T> Result<T> error(String msg, T data) {
-        return new Result<>(DEFAULT_ERROR_CODE, msg, data);
+    public static <T> Result<T> error(T data) {
+        return new Result<>(DEFAULT_ERROR_CODE, DEFAULT_ERROR_MSG, data);
     }
-
-
-    public static <T> Result<T> error(String msg) {
-        return new Result<>(DEFAULT_ERROR_CODE, msg, null);
-    }
-
-
-    public static <T> Result<T> error(int code, String msg, T data) {
-        return new Result<>(code, msg, data);
-    }
-
+    
     public String getTraceId() {
         return traceId;
     }
@@ -113,7 +93,7 @@ public class Result<T> implements Serializable {
 
     final static int DEFAULT_SUCCESS_CODE = 1;
     final static int DEFAULT_ERROR_CODE = 0;
-    final static String DEFAULT_OK_MSG = "请求成功";
-    final static String DEFAULT_ERROR_MSG = "无效请求";
+    final static String DEFAULT_OK_MSG = "处理成功";
+    final static String DEFAULT_ERROR_MSG = "处理失败";
 
 }

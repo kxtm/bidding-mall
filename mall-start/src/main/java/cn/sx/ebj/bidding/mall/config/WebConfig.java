@@ -1,4 +1,4 @@
-package com.chunjies.office.config;
+package cn.sx.ebj.bidding.mall.config;
 
 import org.hibernate.validator.HibernateValidator;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.chunjies.office.domain.response;
+package cn.sx.ebj.bidding.mall.domain.response;
 
 
 import javax.validation.constraints.NotBlank;

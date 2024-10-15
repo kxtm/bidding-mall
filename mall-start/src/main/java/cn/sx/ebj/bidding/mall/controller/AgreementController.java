@@ -1,8 +1,8 @@
-package com.chunjies.office.controller;
+package cn.sx.ebj.bidding.mall.controller;
 
 import cn.sx.ebj.bidding.mall.core.base.IController;
 import cn.sx.ebj.bidding.mall.core.base.Result;
-import com.chunjies.office.domain.response.AgreeCateDto;
+import cn.sx.ebj.bidding.mall.domain.response.AgreeCateDto;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 

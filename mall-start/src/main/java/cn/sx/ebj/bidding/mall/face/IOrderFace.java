@@ -1,4 +1,4 @@
-package com.chunjies.office.service;
+package cn.sx.ebj.bidding.mall.face;
 
 import cn.sx.ebj.bidding.mall.core.base.Result;
 

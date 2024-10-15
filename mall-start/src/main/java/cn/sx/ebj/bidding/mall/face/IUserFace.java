@@ -1,4 +1,4 @@
-package com.chunjies.office.service;
+package cn.sx.ebj.bidding.mall.face;
 
 /**
  * {@code @author} chunjie

@@ -1,10 +1,10 @@
-package com.chunjies.office.controller;
+package cn.sx.ebj.bidding.mall.controller;
 
 import cn.sx.ebj.bidding.mall.core.cache.RedisCache;
 import cn.sx.ebj.bidding.mall.core.consts.Constr;
 import cn.sx.ebj.bidding.mall.core.base.IController;
 import cn.sx.ebj.bidding.mall.core.base.Result;
-import com.chunjies.office.domain.request.LoginDto;
+import cn.sx.ebj.bidding.mall.domain.request.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
 import org.springframework.beans.factory.annotation.Autowired;

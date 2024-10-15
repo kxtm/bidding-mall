@@ -1,6 +1,6 @@
-package com.chunjies.office.service.impl;
+package cn.sx.ebj.bidding.mall.face.impl;
 
-import com.chunjies.office.service.ISupplierFace;
+import cn.sx.ebj.bidding.mall.face.ISupplierFace;
 import org.springframework.stereotype.Service;
 
 /**

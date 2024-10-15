@@ -1,11 +1,11 @@
-package com.chunjies.office.service.impl;
+package cn.sx.ebj.bidding.mall.face.impl;
 
 import cn.sx.ebj.bidding.mall.core.base.Result;
 import cn.sx.ebj.bidding.mall.core.cache.RedisCache;
 import cn.sx.ebj.bidding.mall.core.enums.MarketType;
 import cn.sx.ebj.bidding.mall.plugins.model.MarketParam;
 import cn.sx.ebj.bidding.mall.plugins.spi.IMarketPlugin;
-import com.chunjies.office.service.IOrderFace;
+import cn.sx.ebj.bidding.mall.face.IOrderFace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

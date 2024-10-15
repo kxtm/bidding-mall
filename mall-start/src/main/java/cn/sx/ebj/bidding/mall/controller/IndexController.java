@@ -1,8 +1,9 @@
-package com.chunjies.office.controller;
+package cn.sx.ebj.bidding.mall.controller;
 
 import cn.sx.ebj.bidding.mall.core.base.IController;
 import cn.sx.ebj.bidding.mall.core.base.Result;
-import com.chunjies.office.service.IOrderFace;
+
+import cn.sx.ebj.bidding.mall.face.IOrderFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.chunjies.office.controller;
+package cn.sx.ebj.bidding.mall.controller;
 
 import cn.sx.ebj.bidding.mall.core.base.IController;
 import cn.sx.ebj.bidding.mall.core.base.Result;

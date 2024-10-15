@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.chunjies.office.data.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.chunjies.office.data.entity.User" >
+<mapper namespace="cn.sx.ebj.bidding.mall.data.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.mall.data.entity.User" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="User_Id" property="userId" jdbcType="VARCHAR" />
     <result column="User_Code" property="userCode" jdbcType="VARCHAR" />
@@ -35,7 +35,7 @@
   <delete id="deleteByUserId" parameterType="java.lang.String" >t
     delete from sys_user where user_id = #{userId}
   </delete>
-  <insert id="insertUser" parameterType="com.chunjies.office.data.entity.User" >
+  <insert id="insertUser" parameterType="cn.sx.ebj.bidding.mall.data.entity.User" >
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -168,7 +168,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByUserId" parameterType="com.chunjies.office.data.entity.User" >
+  <update id="updateByUserId" parameterType="cn.sx.ebj.bidding.mall.data.entity.User" >
     update sys_user
     <set >
       <if test="userId != null" >

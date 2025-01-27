@@ -2,8 +2,9 @@ package cn.sx.ebj.bidding.mall.config;
 
 import cn.sx.ebj.bidding.mall.core.base.Result;
 import cn.sx.ebj.bidding.mall.core.exception.BizException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.NestedRuntimeException;

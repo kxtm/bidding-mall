@@ -7,11 +7,11 @@ import cn.sx.ebj.bidding.mall.core.base.Result;
 import cn.sx.ebj.bidding.mall.domain.request.LoginDto;
 import com.wf.captcha.GifCaptcha;
 import com.wf.captcha.base.Captcha;
+import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 import java.io.IOException;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;

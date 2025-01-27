@@ -1,7 +1,8 @@
 package cn.sx.ebj.bidding.mall.domain.response;
 
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
+
 import java.io.Serializable;
 
 /**

@@ -1,8 +1,7 @@
 package cn.sx.ebj.bidding.mall.config;
 
 import cn.sx.ebj.bidding.mall.core.base.Result;
-import cn.sx.ebj.bidding.mall.core.exception.BizException;
-
+import cn.sx.ebj.bidding.mall.core.exception.MallException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -31,6 +30,12 @@ public class AdviceConfig {
         return Result.error(e.getMessage());
     }
 
+    @ExceptionHandler(MallException.class)
+    public Result<String> handleMallException(MallException e, HttpServletRequest req) {
+        logger.error("MallException->{},异常信息:", req.getRequestURL(), e);
+        return Result.error(e.getMessage());
+    }
+
     @ExceptionHandler(RuntimeException.class)
     public Result<String> handleRunException(RuntimeException e, HttpServletRequest req) {
         logger.error("handleRunException地址{},异常信息", req.getRequestURL(), e);
@@ -49,8 +54,8 @@ public class AdviceConfig {
         return Result.error(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
     }
 
-    @ExceptionHandler(BizException.class)
-    public Result<String> handleBizException(BizException e, HttpServletRequest req) {
+    @ExceptionHandler(MallException.class)
+    public Result<String> handleBizException(MallException e, HttpServletRequest req) {
         logger.error("bindException地址:{},异常信息", req.getRequestURL(), e);
         return Result.error(e.getMessage());
     }

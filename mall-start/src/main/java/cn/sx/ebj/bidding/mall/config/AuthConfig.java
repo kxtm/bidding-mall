@@ -1,16 +1,14 @@
 package cn.sx.ebj.bidding.mall.config;
 
 
-import cn.sx.ebj.bidding.mall.core.base.Result;
 import cn.sx.ebj.bidding.mall.core.cache.RedisCache;
+import cn.sx.ebj.bidding.mall.core.exception.MallException;
 import cn.sx.ebj.bidding.mall.core.utils.JsonUtil;
-
+import jakarta.annotation.Nonnull;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -24,23 +22,15 @@ public class AuthConfig implements HandlerInterceptor {
     final Logger logger = LoggerFactory.getLogger(AuthConfig.class);
     private RedisCache redisCache;
 
-    @Override
-    public boolean preHandle(HttpServletRequest request, @NonNull HttpServletResponse resp, @NonNull Object handler) throws Exception {
-        logger.error("请求地址{}", request.getRequestURI());
+    public boolean preHandle(HttpServletRequest request, @Nonnull Object handler) throws Exception {
+        logger.error("请求地址{},{}", request.getRequestURI(), JsonUtil.objectToJson(handler));
         String token = request.getHeader("token");
+
         if (ObjectUtils.isEmpty(token)) {
-            resp.setCharacterEncoding("UTF-8");
-            resp.setContentType("application/json; charset=utf-8");
-            resp.getWriter().println(JsonUtil.objectToJson(Result.error("无权限访问")));
-            resp.getWriter().close();
-            return false;
+            throw new MallException("无权限访问", 4003);
         }
         if (!ObjectUtils.isEmpty(token) && ObjectUtils.isEmpty(redisCache.getCacheObject(token))) {
-            resp.setCharacterEncoding("UTF-8");
-            resp.setContentType("application/json; charset=utf-8");
-            resp.getWriter().println(JsonUtil.objectToJson(Result.error("授权已过期")));
-            resp.getWriter().close();
-            return false;
+            throw new MallException("授权已过期", 4001);
         }
         return true;
     }

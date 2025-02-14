@@ -30,16 +30,14 @@ public class RedisConfig {
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         objectMapper.setDefaultTyping(ObjectMapper.DefaultTypeResolverBuilder.noTypeInfoBuilder());
         StringRedisSerializer strSerializer = new StringRedisSerializer();
-        Jackson2JsonRedisSerializer<Object> serializer = new Jackson2JsonRedisSerializer<Object>(Object.class);
-        serializer.setObjectMapper(objectMapper);
         // key采用String的序列化方式
         template.setKeySerializer(strSerializer);
         // hash的key也采用String的序列化方式
         template.setHashKeySerializer(strSerializer);
         // value序列化方式采用jackson
-        template.setValueSerializer(serializer);
+        template.setValueSerializer(new Jackson2JsonRedisSerializer<>(objectMapper, String.class));
         // hash的value序列化方式采用jackson
-        template.setHashValueSerializer(serializer);
+        template.setHashValueSerializer(new Jackson2JsonRedisSerializer<>(objectMapper, String.class));
         template.afterPropertiesSet();
         return template;
     }

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sx.ebj.bidding.mall.data.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.mall.data.entity.User" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="User_Id" property="userId" jdbcType="VARCHAR" />
+    <result column="User_Code" property="userCode" jdbcType="VARCHAR" />
+    <result column="User_Pwd" property="userPwd" jdbcType="VARCHAR" />
+    <result column="User_Name" property="userName" jdbcType="VARCHAR" />
+    <result column="User_Name_enc" property="userNameEnc" jdbcType="VARCHAR" />
+    <result column="User_Sex" property="userSex" jdbcType="INTEGER" />
+    <result column="user_type" property="userType" jdbcType="INTEGER" />
+    <result column="user_status" property="userStatus" jdbcType="INTEGER" />
+    <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+    <result column="user_email_enc" property="userEmailEnc" jdbcType="VARCHAR" />
+    <result column="user_tel" property="userTel" jdbcType="VARCHAR" />
+    <result column="user_tel_enc" property="userTelEnc" jdbcType="VARCHAR" />
+    <result column="user_mobile" property="userMobile" jdbcType="VARCHAR" />
+    <result column="user_mobile_enc" property="userMobileEnc" jdbcType="VARCHAR" />
+    <result column="create_Pk" property="createPk" jdbcType="VARCHAR" />
+    <result column="create_By" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_Time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_Pk" property="modifyPk" jdbcType="VARCHAR" />
+    <result column="modify_By" property="modifyBy" jdbcType="VARCHAR" />
+    <result column="modify_Time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, User_Code, User_Pwd, User_Name, User_Name_enc, User_Sex, user_type,
+    user_status, user_email, user_email_enc, user_tel, user_tel_enc, user_mobile, user_mobile_enc,
+    create_Pk, create_By, create_Time, modify_Pk, modify_By, modify_Time
+  </sql>
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select   <include refid="Base_Column_List" />  from sys_user  where user_id = #{userId}
+  </select>
+  <delete id="deleteByUserId" parameterType="java.lang.String" >t
+    delete from sys_user where user_id = #{userId}
+  </delete>
+  <insert id="insertUser" parameterType="cn.sx.ebj.bidding.mall.data.entity.User" >
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        User_Id,
+      </if>
+      <if test="userCode != null" >
+        User_Code,
+      </if>
+      <if test="userPwd != null" >
+        User_Pwd,
+      </if>
+      <if test="userName != null" >
+        User_Name,
+      </if>
+      <if test="userNameEnc != null" >
+        User_Name_enc,
+      </if>
+      <if test="userSex != null" >
+        User_Sex,
+      </if>
+      <if test="userType != null" >
+        user_type,
+      </if>
+      <if test="userStatus != null" >
+        user_status,
+      </if>
+      <if test="userEmail != null" >
+        user_email,
+      </if>
+      <if test="userEmailEnc != null" >
+        user_email_enc,
+      </if>
+      <if test="userTel != null" >
+        user_tel,
+      </if>
+      <if test="userTelEnc != null" >
+        user_tel_enc,
+      </if>
+      <if test="userMobile != null" >
+        user_mobile,
+      </if>
+      <if test="userMobileEnc != null" >
+        user_mobile_enc,
+      </if>
+      <if test="createPk != null" >
+        create_Pk,
+      </if>
+      <if test="createBy != null" >
+        create_By,
+      </if>
+      <if test="createTime != null" >
+        create_Time,
+      </if>
+      <if test="modifyPk != null" >
+        modify_Pk,
+      </if>
+      <if test="modifyBy != null" >
+        modify_By,
+      </if>
+      <if test="modifyTime != null" >
+        modify_Time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null" >
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null" >
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userNameEnc != null" >
+        #{userNameEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null" >
+        #{userSex,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null" >
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userEmail != null" >
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmailEnc != null" >
+        #{userEmailEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="userTel != null" >
+        #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="userTelEnc != null" >
+        #{userTelEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null" >
+        #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobileEnc != null" >
+        #{userMobileEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyPk != null" >
+        #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByUserId" parameterType="cn.sx.ebj.bidding.mall.data.entity.User" >
+    update sys_user
+    <set >
+      <if test="userId != null" >
+        User_Id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="userCode != null" >
+        User_Code = #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null" >
+        User_Pwd = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null" >
+        User_Name = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userNameEnc != null" >
+        User_Name_enc = #{userNameEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null" >
+        User_Sex = #{userSex,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null" >
+        user_type = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null" >
+        user_status = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="userEmail != null" >
+        user_email = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="userEmailEnc != null" >
+        user_email_enc = #{userEmailEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="userTel != null" >
+        user_tel = #{userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="userTelEnc != null" >
+        user_tel_enc = #{userTelEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobile != null" >
+        user_mobile = #{userMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userMobileEnc != null" >
+        user_mobile_enc = #{userMobileEnc,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        create_Pk = #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        create_By = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_Time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyPk != null" >
+        modify_Pk = #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        modify_By = #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where User_Id = #{userId}
+  </update>
+
+</mapper>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sx.ebj.bidding.mall.data.dao.UserOrgMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.mall.data.entity.UserOrg" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="org_id" property="orgId" jdbcType="VARCHAR" />
+    <result column="org_default" property="orgDefault" jdbcType="INTEGER" />
+    <result column="sort_num" property="sortNum" jdbcType="INTEGER" />
+    <result column="org_seq" property="orgSeq" jdbcType="VARCHAR" />
+    <result column="org_seq_cn" property="orgSeqCn" jdbcType="VARCHAR" />
+    <result column="create_Pk" property="createPk" jdbcType="VARCHAR" />
+    <result column="create_By" property="createBy" jdbcType="VARCHAR" />
+    <result column="create_Time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="modify_Pk" property="modifyPk" jdbcType="VARCHAR" />
+    <result column="modify_By" property="modifyBy" jdbcType="VARCHAR" />
+    <result column="modify_Time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+     user_id, org_id, org_default, sort_num, org_seq, org_seq_cn, create_Pk, create_By,  create_Time, modify_Pk, modify_By, modify_Time
+  </sql>
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select   <include refid="Base_Column_List" />  from sys_user_org  where id = #{userId}
+  </select>
+  <delete id="deleteUserOrg" parameterType="java.lang.String" >
+    delete from sys_user_org where user_id = #{id} and org_id=#{orgId}
+  </delete>
+  <insert id="insertUserOrg" parameterType="cn.sx.ebj.bidding.mall.data.entity.UserOrg" >
+    insert into sys_user_org
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="orgId != null" >
+        org_id,
+      </if>
+      <if test="orgDefault != null" >
+        org_default,
+      </if>
+      <if test="sortNum != null" >
+        sort_num,
+      </if>
+      <if test="orgSeq != null" >
+        org_seq,
+      </if>
+      <if test="orgSeqCn != null" >
+        org_seq_cn,
+      </if>
+      <if test="createPk != null" >
+        create_Pk,
+      </if>
+      <if test="createBy != null" >
+        create_By,
+      </if>
+      <if test="createTime != null" >
+        create_Time,
+      </if>
+      <if test="modifyPk != null" >
+        modify_Pk,
+      </if>
+      <if test="modifyBy != null" >
+        modify_By,
+      </if>
+      <if test="modifyTime != null" >
+        modify_Time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDefault != null" >
+        #{orgDefault,jdbcType=INTEGER},
+      </if>
+      <if test="sortNum != null" >
+        #{sortNum,jdbcType=INTEGER},
+      </if>
+      <if test="orgSeq != null" >
+        #{orgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeqCn != null" >
+        #{orgSeqCn,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyPk != null" >
+        #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateUserOrg" parameterType="cn.sx.ebj.bidding.mall.data.entity.UserOrg" >
+    update sys_user_org
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        org_id = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDefault != null" >
+        org_default = #{orgDefault,jdbcType=INTEGER},
+      </if>
+      <if test="sortNum != null" >
+        sort_num = #{sortNum,jdbcType=INTEGER},
+      </if>
+      <if test="orgSeq != null" >
+        org_seq = #{orgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeqCn != null" >
+        org_seq_cn = #{orgSeqCn,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        create_Pk = #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        create_By = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_Time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyPk != null" >
+        modify_Pk = #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        modify_By = #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where userId = #{userId} and org_id = #{orgId}
+  </update>
+
+</mapper>
